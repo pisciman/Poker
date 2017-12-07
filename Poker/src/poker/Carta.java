@@ -8,13 +8,13 @@ package poker;
 public class Carta
 {
     private String simbolo;
-    private int valore;
+    private int seme;
     private boolean stato;
 
-    public Carta(String simbolo, int valore, boolean stato)
+    public Carta(String simbolo, int seme, boolean stato)
     {
         this.simbolo = simbolo;
-        this.valore = valore;
+        this.seme = seme;
         this.stato = stato;
     }
 }
