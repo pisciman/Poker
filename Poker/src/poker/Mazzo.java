@@ -3,6 +3,7 @@ package poker;
 import java.util.*;
 public class Mazzo {
 private final Carta[] mazzo = new Carta[52];
+private int icarte=52;
 
 public Mazzo() {
 int c = 0;
@@ -16,5 +17,10 @@ int c = 0;
 
 private void Mescola(){
     Collections.shuffle(Arrays.asList(mazzo));
+}
+
+public Carta pesca(){
+    icarte--;
+    return mazzo[icarte];
 }
 }
