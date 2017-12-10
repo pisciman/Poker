@@ -3,24 +3,30 @@ package poker;
 
 public class Carta {
     
-    public String seme;
-    public int valore;
-    public String colore;
-    public boolean coperta;
+    private String seme;
+    private String valore;
+    private String colore;  
+    private boolean coperta;
 
-    public Carta(String seme, int valore, String colore, boolean coperta) 
+    /**
+     * Costruttore
+     * @param seme
+     * @param valore
+     * @param colore
+     */
+    public Carta(String seme, String valore, String colore /* ,boolean coperta*/) 
     {
         this.seme = seme;
         this.valore = valore;
         this.colore = colore;
-        this.coperta = coperta;   
+    //    this.coperta = coperta;   
     }
     
     public String getSeme() {
         return seme;
     }
 
-    public int getValore() {
+    public String getValore() {
         return valore;
     }
 
@@ -36,7 +42,7 @@ public class Carta {
         this.seme = seme;
     }
 
-    public void setValore(int valore) {
+    public void setValore(String valore) {
         this.valore = valore;
     }
 
@@ -51,12 +57,12 @@ public class Carta {
     
 //  METODO ALTERNATIVO DEL COSTRUTTORE E SETTER    
     
- /*   public Carta(String seme, int valore, String colore, boolean coperta)
+ /*   public Carta(String seme, String valore, String colore, boolean coperta)
     {
         setCarta(seme,valore,colore,coperta);
     }
     
-    public void setCarta(String seme, int valore, String colore, boolean coperta)
+    public void setCarta(String seme, String valore, String colore, boolean coperta)
     {
         this.seme = seme;
         this.valore = valore;
