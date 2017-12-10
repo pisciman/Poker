@@ -1,5 +1,6 @@
 
-package poker
+package poker;
+import java.util.*;
 public class Mazzo {
 private final Carta[] mazzo = new Carta[52];
 
@@ -11,5 +12,9 @@ int c = 0;
             c++;
         }
     }
+}
+
+private void Mescola(){
+    Collections.shuffle(Arrays.asList(mazzo));
 }
 }
