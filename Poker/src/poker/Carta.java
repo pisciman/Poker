@@ -5,7 +5,7 @@ public class Carta {
     private int seme;
     private int valore;
     private boolean cartaCoperta;
-    private static final String[] immagine={"♥","♦","♣","♠"};
+    public static final String[] immagine={"♥","♦","♣","♠"};
 
     public int getSeme() {
         return seme;
