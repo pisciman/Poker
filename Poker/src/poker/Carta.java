@@ -4,7 +4,8 @@ package poker;
 public class Carta {
     private int seme;
     private int valore;
-    private String[] immagine={"♥","♦","♣","♠"};
+    private boolean cartaCoperta;
+    private static final String[] immagine={"♥","♦","♣","♠"};
 
     public int getSeme() {
         return seme;
@@ -27,6 +28,15 @@ public class Carta {
         }else this.valore=13;
         
     }
+
+    public boolean isCartaCoperta() {
+        return cartaCoperta;
+    }
+
+    public void setCartaCoperta(boolean cartaCoperta) {
+        this.cartaCoperta = cartaCoperta;
+    }
+    
 
     public Carta(int valore, int seme) {
         if(seme>=0&&seme<4){this.seme = seme;}
