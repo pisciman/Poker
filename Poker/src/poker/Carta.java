@@ -9,15 +9,15 @@ package poker;
  */
 public class Carta {
     /**Seme della carta*/
-    final private String seme;
+    final private Seme seme;
     /**Valore (numero) della carta*/
     final private int valore;
     /**Definisce lo stato (coperto(1) o scoperto(0) della carta)*/
     private boolean coperto;
-
+    
 /*--Variabili-----------------------------------------------------------------*/
     
-    public Carta(String seme, int valore, boolean coperto) {
+    public Carta(Seme seme, int valore, boolean coperto) {
         this.seme = seme;
         this.valore = valore;
         this.coperto = coperto;
