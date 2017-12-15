@@ -10,8 +10,6 @@ public class Mazzo {
     private Carta mazzo[] = new Carta[52];
     
     
-/*--Variabili-----------------------------------------------------------------*/
-
     /**
      * Genera in modo ordinato il mazzo di 52 carte da poker coperte
      */
@@ -20,6 +18,5 @@ public class Mazzo {
             for (int Valore = 0; Valore < 13; Valore++)
                 mazzo[Valore + (13 * seme.ordinal())] = new Carta(seme, Valore, true);
     }
-    
-/*--Metodo genera-------------------------------------------------------------*/
+
 }
