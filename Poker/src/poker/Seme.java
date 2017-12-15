@@ -1,4 +1,3 @@
-
 package poker;
 
 /**
@@ -16,10 +15,11 @@ public enum Seme {
     };
     
 /**
- * Resistuisce il simbolo del seme. 
+ * Resituisce il simbolo del seme. 
  * Per avere il nome completo, usare .name()
  */
     @Override
     public String toString() {
     return simbolo;}
+
 }

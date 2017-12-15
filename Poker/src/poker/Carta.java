@@ -12,16 +12,20 @@ public class Carta {
     final private Seme seme;
     /**Valore (numero) della carta*/
     final private int valore;
-    /**Definisce lo stato (coperto(1) o scoperto(0) della carta)*/
+    /**Definisce lo stato (coperto(true) o scoperto(false) della carta)*/
     private boolean coperto;
-    
-/*--Variabili-----------------------------------------------------------------*/
-    
+     
     public Carta(Seme seme, int valore, boolean coperto) {
         this.seme = seme;
         this.valore = valore;
-        this.coperto = coperto;
     }
-    
-/*--Costruttore---------------------------------------------------------------*/
-}
+    /**
+     * Rappresentazione della carta. 
+     * Deve usare esattamente TRE caratteri. 
+     * Se la carta è coperta deve stampare tre asterischi
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return "";
+    }
