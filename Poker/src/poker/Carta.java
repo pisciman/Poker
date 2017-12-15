@@ -1,12 +1,24 @@
-
 package poker;
 
+/**
+ * Definisce una carta da gioco del poker classica
+ * costituita dal <code>seme</code>, dal <code>valore</code> e
+ * dallo stato <code>coperto</code> di ogni carta.
+ *
+ * @author m.santosuosso
+ */
 public class Carta {
-    private Seme seme;
-    private int valore;
-    private boolean coperta;
-    
-    
+    /**Seme della carta*/
+    final private Seme seme;
+    /**Valore (numero) della carta*/
+    final private int valore;
+    /**Definisce lo stato (coperto(true) o scoperto(false) della carta)*/
+    private boolean coperto;
+     
+    public Carta(Seme seme, int valore, boolean coperto) {
+        this.seme = seme;
+        this.valore = valore;
+    }
     /**
      * Rappresentazione della carta. 
      * Deve usare esattamente TRE caratteri. 
