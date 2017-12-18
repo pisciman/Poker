@@ -1,31 +1,41 @@
 /**
  * @author Alessio Torricelli
  * @version 1.0
- * @since 07-12-2017
 **/
 package poker;
 
 public class Carta
 {
-    private static final String[] simboli = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-    private String simbolo;
+    private final char[] simboli =
+    {
+        'A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K'
+    };
+    private char simbolo;
     private Seme seme;
     private boolean stato;
     
-    public Carta(int i, boolean stato)
+    public Carta(int sim, int sem, boolean stato)
     {
-        switch(i)
-        {
-            case 0: { this.seme = Seme.CUORI;  }
-            case 12: { this.seme = Seme.FIORI;  }
-            case 25: { this.seme = Seme.PICCHE; }
-            case 38: { this.seme = Seme.QUADRI; }
-        }
-        this.simbolo = simboli[i];
+        this.simbolo = simboli[sim];
+        this.seme = initSeme(sem);
         this.stato = stato;
     }
+    
+    private Seme initSeme(int n)
+    {
+        switch(n)
+        {
+            case 0: { return Seme.CUORI; }
+            case 1: { return Seme.FIORI; }
+            case 2: { return Seme.PICCHE; }
+            default: { return Seme.QUADRI; }
+            //case 3: { return Seme.QUADRI; }
+        }
+        
+        //return Error();
+    }
 
-    public String getSimbolo()
+    public char getSimbolo()
     {
         return simbolo;
     }
@@ -40,7 +50,7 @@ public class Carta
         return stato;
     }
 
-    public void setSimbolo(String simbolo)
+    public void setSimbolo(char simbolo)
     {
         this.simbolo = simbolo;
     }
@@ -58,8 +68,9 @@ public class Carta
     @Override
     public String toString()
     {
-        return "Carta{" + "simbolo=" + simbolo + ", seme=" + seme + ", stato=" + stato + '}';
+        if(stato)
+            return "Carta{Simbolo: " + simbolo + ", Seme: " + seme + ", Stato: Scoperta}";
+        else
+            return "Carta{Simbolo: " + simbolo + ", Seme: " + seme + ", Stato: Coperta}";
     }
-    
-    
 }
