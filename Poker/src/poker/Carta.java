@@ -6,6 +6,7 @@ package poker;
  * dallo stato <code>coperto</code> di ogni carta.
  *
  * @author m.santosuosso
+ * @author a.torricelli
  */
 public class Carta {
     /**Seme della carta*/
@@ -30,4 +31,18 @@ public class Carta {
         return "";
     }
     
+    public int getValore()
+    {
+        return valore;
+    }
+    
+        public Seme getSeme()
+    {
+        return seme;
+    }
+        
+    public boolean isCoperto()
+    {
+        return coperto;
+    }
 }
