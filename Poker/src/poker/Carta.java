@@ -14,6 +14,12 @@ public class Carta
     private Seme seme;
     private boolean stato;
     
+    /**
+     * Costruttore della Carta
+     * @param sim indice dell'array dei simboli (0-12)
+     * @param sem indice dei semi (0-3)
+     * @param stato carta coperta o scoperta
+     */
     public Carta(int sim, int sem, boolean stato)
     {
         this.simbolo = simboli[sim];
@@ -21,6 +27,11 @@ public class Carta
         this.stato = stato;
     }
     
+    /**
+     * Scelta del seme in base n
+     * @param n variabile per lo switch
+     * @return seme della carta (<code>Seme</code>)
+     */
     private Seme initSeme(int n)
     {
         switch(n)
@@ -40,24 +51,24 @@ public class Carta
         return simbolo;
     }
 
-    public Seme getSeme()
-    {
-        return seme;
-    }
-
-    public boolean isStato()
-    {
-        return stato;
-    }
-
     public void setSimbolo(char simbolo)
     {
         this.simbolo = simbolo;
     }
 
+    public Seme getSeme()
+    {
+        return seme;
+    }
+
     public void setSeme(Seme seme)
     {
         this.seme = seme;
+    }
+
+    public boolean isStato()
+    {
+        return stato;
     }
 
     public void setStato(boolean stato)
@@ -66,6 +77,9 @@ public class Carta
     }
     
     @Override
+    /**
+     * toString che in base allo <code>stato</code> cambia il la stringa di return.
+     */
     public String toString()
     {
         if(stato)

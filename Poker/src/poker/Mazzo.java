@@ -21,6 +21,9 @@ public class Mazzo
         System.out.println(m.toString());
     }
     
+    /**
+     * Costruttore crea Mazzo
+     */
     public Mazzo()
     {
         /* Carte Totali, Simbolo e Seme */
@@ -38,6 +41,9 @@ public class Mazzo
         }
     }
     
+    /**
+     * Metodo mescola Mazzo
+     */
     public void mescolaMazzo()
     {
         Carta scambio;
@@ -57,6 +63,9 @@ public class Mazzo
     }
     
     @Override
+    /**
+     * toString che stampa tutte le carte del Mazzo
+     */
     public String toString()
     {
         String str = "";

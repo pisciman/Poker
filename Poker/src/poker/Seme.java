@@ -26,6 +26,7 @@ public enum Seme
     
     public static void main(String args[])
     {
-        for (Seme i:Seme.values()) System.out.println(i.name() + ": " + i + " Ordinale: "+i.ordinal());
+        for (Seme i:Seme.values())
+            System.out.println(i.name() + ": " + i + " Ordinale: "+i.ordinal());
     }
 }
