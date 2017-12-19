@@ -7,6 +7,7 @@ package poker;
  *
  * @author m.santosuosso
  * @author a.torricelli
+ * @author s.nicolini
  */
 public class Carta {
     /**Seme della carta*/
@@ -20,9 +21,16 @@ public class Carta {
         this.seme = seme;
         this.valore = valore;
     }
+      
+public Carta(Seme seme, int valore) {
+        this.seme =seme;
+        this.valore =valore;
+        this.coperto = true;
+}
+
     /**
      * Rappresentazione della carta. 
-     * Deve usare esattamente TRE caratteri. 
+     * TODO:Deve usare esattamente TRE caratteri. 
      * Se la carta è coperta deve stampare tre asterischi
      * @return 
      */
@@ -36,6 +44,29 @@ public class Carta {
         return valore;
     }
     
+    /**
+     * 
+     * @return output testuale del valore
+     */
+public String getStringValore() {
+    if ((valore == 1) || (valore > 10)) {
+        switch (valore) {
+            case 1:
+        return "Asso";
+            case 11:
+        return "Jack";
+            case 12:
+        return "Donna";
+            case 13:
+        return "Re";
+        default: return "";
+        }
+    }
+    else {
+        return (""+valore);
+    }
+}
+    
         public Seme getSeme()
     {
         return seme;
@@ -45,4 +76,5 @@ public class Carta {
     {
         return coperto;
     }
+
 }
