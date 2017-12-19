@@ -20,6 +20,7 @@ public class Carta {
     public Carta(Seme seme, int valore, boolean coperto) {
         this.seme = seme;
         this.valore = valore;
+        this.coperto = coperto;
     }
       
 public Carta(Seme seme, int valore) {
