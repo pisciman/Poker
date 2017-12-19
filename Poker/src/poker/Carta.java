@@ -1,36 +1,81 @@
 
 package poker;
 
+
 public class Carta {
     private final int seme;
     private final int valore;
-    private final int colore;
+    private boolean coperta=true;
     
-public Carta(int seme, int valore, int colore) {
+/**
+ * Costruttore della carta
+ */    
+public Carta(int seme, int valore) {
     this.seme =seme;
     this.valore =valore;
-    this.colore =colore;
 }
 
+/**
+ * Situazione iniziale di ogni carta , (coperta)
+ */
+public void setCoperta(boolean coperta) {
+    this.coperta = coperta;
+}
+
+/**
+ * 
+ * @return se la carta è coperta o no 
+ */
+public String getCoperta() {
+    if (coperta==false) {
+        return "scoperta";
+    } else {
+        return "coperta";
+    }
+}
+
+/**
+ * 
+ * @return output del colore
+ */
 public String getColore() {
-    if(colore<26){
-        return "rosso";
-    }else return "nero";
+    switch(this.seme){
+        case 1:
+            return "rosso";
+        case 2:
+            return "nero";
+        case 3:
+            return "rosso";
+        case 4:
+            return "nero";
+        default: return "";
+    }
 }
 
+/**
+ * 
+ * @return output del seme
+ */
 public String getSeme() {
+    
     switch (seme) {
         case 1:
-            return "Cuori";
-        case 2:
             return "Quadri";
-        case 3:
+        case 2:
             return "Fiori";
+        case 3:
+            return "Cuori";
         case 4:
             return "Picche";
         default: return "";
     }
 }
+
+
+/**
+ * 
+ * @return output del valore
+ */
 public String getValore() {
     if ((valore == 1) || (valore > 10)) {
         switch (valore) {
@@ -48,6 +93,18 @@ public String getValore() {
     else {
         return (""+valore);
     }
-
 }
+
+/**
+ * Stampa le caratteristiche della carta
+ * @return Carta
+ */
+    @Override
+    public String toString() {
+        if (this.coperta==false) {
+            return "Carta{" + "seme=" + getSeme() + ", valore=" + getValore() + ", colore=" + getColore() + '}';
+        }else return "Carta Coperta";
+        
+    }
+
 }
