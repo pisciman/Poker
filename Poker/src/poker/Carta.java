@@ -50,6 +50,7 @@ public Carta(Seme seme, int valore) {
      * @return output testuale del valore
      */
 public String getStringValore() {
+
     if ((valore == 1) || (valore > 10)) {
         switch (valore) {
             case 1:
@@ -67,7 +68,7 @@ public String getStringValore() {
         return (""+valore);
     }
 }
-    
+
         public Seme getSeme()
     {
         return seme;
