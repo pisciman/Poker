@@ -16,10 +16,10 @@ public enum Seme {
         simbolo=s;
     };
     
-/**
- * Resituisce il simbolo del seme. 
- * Per avere il nome completo, usare .name()
- */
+    /**
+     * Resituisce il simbolo del seme. 
+     * Per avere il nome completo, usare .name()
+     */
     @Override
     public String toString() {
     return simbolo;}

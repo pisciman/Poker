@@ -17,6 +17,11 @@ public class Mazzo {
     private Carta mazzo[] = new Carta[MAX];
     private int icarte=MAX;
     
+    public Mazzo()
+    {
+        genera();
+        mescola();
+    }  
     
     /**
      * Genera in modo ordinato il mazzo di 52 carte da poker coperte
@@ -32,6 +37,7 @@ public class Mazzo {
      * TODO: Migliorare l'aspetto
      */
     
+    @Override
     public String toString()
     {
         String str = "";
@@ -42,28 +48,24 @@ public class Mazzo {
         return "Mazzo\n{" + str + "\n}";
     }
    
-/**
- * Funzione che mescola la carta
- */
-private void Mescola(){
-    Collections.shuffle(Arrays.asList(mazzo));
-}
+    /**
+     * Funzione che mescola la carta
+     */
+    private void mescola(){
+        Collections.shuffle(Arrays.asList(mazzo));
+    }
 
-/**
- * Pesca una carta
- */
-public Carta pesca(){
-    icarte--;
-    return mazzo[icarte];
-}
-
-
+    /**
+     * Pesca una carta
+     */
+    public Carta pesca(){
+        icarte--;
+        return mazzo[icarte];
+    }
 
     // DA COME SI VEDE, QUESTO ANCORA NON FUNZIONA.
     public static void main (String args[]) {
         Mazzo m = new Mazzo();
         System.out.println(m);
     }
-    
-    
 }

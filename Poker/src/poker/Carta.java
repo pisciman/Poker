@@ -24,11 +24,11 @@ public class Carta {
         this.coperto = coperto;
     }
       
-public Carta(Seme seme, int valore) {
+    public Carta(Seme seme, int valore) {
         this.seme =seme;
         this.valore =valore;
         this.coperto = true;
-}
+    }
 
     /**
      * Rappresentazione della carta. 
@@ -37,12 +37,12 @@ public Carta(Seme seme, int valore) {
      * @return 
      */
     @Override
-    public String toString() {
-        return "";
-    }
-    
-    public int getValore()
+    public String toString()
     {
+        return "Carta{seme=" + seme + ", valore=" + valore + ", coperto=" + coperto + '}';
+    }
+
+    public int getValore() {
         return valore;
     }
     
@@ -50,27 +50,27 @@ public Carta(Seme seme, int valore) {
      * 
      * @return output testuale del valore
      */
-public String getStringValore() {
+    public String getStringValore() {
 
-    if ((valore == 1) || (valore > 10)) {
-        switch (valore) {
-            case 1:
-        return "Asso";
-            case 11:
-        return "Jack";
-            case 12:
-        return "Donna";
-            case 13:
-        return "Re";
-        default: return "";
+        if ((valore == 1) || (valore > 10)) {
+            switch (valore) {
+                case 1:
+            return "Asso";
+                case 11:
+            return "Jack";
+                case 12:
+            return "Donna";
+                case 13:
+            return "Re";
+            default: return "";
+            }
+        }
+        else {
+            return (""+valore);
         }
     }
-    else {
-        return (""+valore);
-    }
-}
 
-        public Seme getSeme()
+    public Seme getSeme()
     {
         return seme;
     }
@@ -95,14 +95,6 @@ public String getStringValore() {
         if (this.seme != other.seme) {
             return false;
         }
-        if (this.valore != other.valore) {
-            return false;
-        }
-        return true;
+        return this.valore == other.valore;
     }
 }
-
-
-
-
-    
