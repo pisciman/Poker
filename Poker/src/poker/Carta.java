@@ -8,6 +8,7 @@ package poker;
  * @author m.santosuosso
  * @author a.torricelli
  * @author s.nicolini
+ * @author d.santacroce
  */
 public class Carta {
     /**Seme della carta*/
@@ -79,4 +80,29 @@ public String getStringValore() {
         return coperto;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Carta other = (Carta) obj;
+        if (this.seme != other.seme) {
+            return false;
+        }
+        if (this.valore != other.valore) {
+            return false;
+        }
+        return true;
+    }
 }
+
+
+
+
+    
