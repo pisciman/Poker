@@ -25,8 +25,8 @@ public class Carta {
     }
       
 public Carta(Seme seme, Valore valore) {
-        this.seme =seme;
-        this.valore =valore;
+        this.seme = seme;
+        this.valore = valore;
         this.coperto = true;
 }
 
@@ -38,7 +38,10 @@ public Carta(Seme seme, Valore valore) {
  */
  @Override
  public String toString() {
-     return "";
+     if (isCoperto())
+         return "***";
+     else
+        return valore.toString() + seme.toString() + getColore();
  }
  
  public int compareSeme (Carta c2) {
@@ -70,6 +73,12 @@ public Carta(Seme seme, Valore valore) {
     {
         return coperto;
     }
+  public String getColore(){
+      if (seme.simbolo.equals("♥") || seme.simbolo.equals("♦"))
+          return "r";
+      else 
+          return "b";
+  }
 }
 
 
