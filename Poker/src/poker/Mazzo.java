@@ -4,6 +4,7 @@ package poker;
  * Regola il mazzo di carte con cui giocare
  *
  * @author m.santosuosso
+ * @author m.missiroli (adattamento genera(), da testare)
  */
 public class Mazzo {
     /**Mazzo da gioco*/
@@ -17,8 +18,8 @@ public class Mazzo {
      */
     public void genera() {
        for (Seme seme : Seme.values())
-            for (int Valore = 0; Valore < 13; Valore++)
-                mazzo[Valore + (13 * seme.ordinal())] = new Carta(seme, Valore, true);
+            for (Valore valore:Valore.values())
+                mazzo[valore.ordinal() + (13 * seme.ordinal())] = new Carta(seme, valore, true);
     }
     
 /*--Metodo genera-------------------------------------------------------------*/

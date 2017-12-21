@@ -11,11 +11,11 @@ public class Carta {
     /**Seme della carta*/
     final private Seme seme;
     /**Valore (numero) della carta*/
-    final private int valore;
+    final private Valore valore;
     /**Definisce lo stato (coperto(true) o scoperto(false) della carta)*/
     private boolean coperto;
      
-    public Carta(Seme seme, int valore, boolean coperto) {
+    public Carta(Seme seme, Valore valore, boolean coperto) {
         this.seme = seme;
         this.valore = valore;
     }
@@ -29,5 +29,5 @@ public class Carta {
     public String toString() {
         return "";
     }
-    
+
 }
