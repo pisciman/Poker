@@ -14,17 +14,17 @@ public class Carta {
     /**Seme della carta*/
     final private Seme seme;
     /**Valore (numero) della carta*/
-    final private int valore;
+    final private Valore valore;
     /**Definisce lo stato (coperto(true) o scoperto(false) della carta)*/
     private boolean coperto;
      
-    public Carta(Seme seme, int valore, boolean coperto) {
+    public Carta(Seme seme, Valore valore, boolean coperto) {
         this.seme = seme;
         this.valore = valore;
         this.coperto = coperto;
     }
       
-public Carta(Seme seme, int valore) {
+public Carta(Seme seme, Valore valore) {
         this.seme =seme;
         this.valore =valore;
         this.coperto = true;
@@ -41,35 +41,11 @@ public Carta(Seme seme, int valore) {
         return "";
     }
     
-    public int getValore()
+    public Valore getValore()
     {
         return valore;
     }
     
-    /**
-     * 
-     * @return output testuale del valore
-     */
-public String getStringValore() {
-
-    if ((valore == 1) || (valore > 10)) {
-        switch (valore) {
-            case 1:
-        return "Asso";
-            case 11:
-        return "Jack";
-            case 12:
-        return "Donna";
-            case 13:
-        return "Re";
-        default: return "";
-        }
-    }
-    else {
-        return (""+valore);
-    }
-}
-
         public Seme getSeme()
     {
         return seme;
@@ -100,6 +76,7 @@ public String getStringValore() {
         }
         return true;
     }
+
 }
 
 
