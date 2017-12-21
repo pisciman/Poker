@@ -1,28 +1,33 @@
+
 package poker;
 
 /**
- * Contiene tutti i semi delle carte
- * Si usa l'ordine dei semi italiano (che non è quello inglese).
- * 
+ * Si usa l'ordine dei semi italiano (che non è quello inglese)
  * @author piffy
- * @author m.santosuosso
+ * @author Torricelli (il main di prova)
  */
 public enum Seme {
     FIORI("♣"),QUADRI("♦"),CUORI("♥"),PICCHE("♠");
     
-    public final String seme;
+    public final String simbolo;
     
-    Seme(String seme){
-        this.seme = seme;
+
+    Seme(String s){
+        simbolo=s;
     };
     
 /**
- * Per avere il nome completo, usare .name().
- * 
- * @return simbolo del seme
+ * Resituisce il simbolo del seme. 
+ * Per avere il nome completo, usare .name()
  */
     @Override
     public String toString() {
-        return seme;
+    return simbolo;}
+
+    public static void main(String args[])
+    {
+        for (Seme i:Seme.values())
+            System.out.println(i.name() + ": " + i + " Ordinale: "+i.ordinal());
     }
+    
 }
