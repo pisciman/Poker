@@ -30,4 +30,5 @@ public enum Valore {
     public int getValore() {
         return (this.ordinal() + 1);
     }
+    
 }
