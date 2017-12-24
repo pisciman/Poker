@@ -9,6 +9,7 @@ package poker;
  * @author a.torricelli
  * @author s.nicolini
  * @author d.santacroce
+ * @author piffy (main di prova, stinghe del colore)
  */
 public class Carta {
     /**Seme della carta*/
@@ -32,16 +33,17 @@ public Carta(Seme seme, Valore valore) {
 
 /**
  * Rappresentazione della carta. 
- * TODO:Deve usare esattamente TRE caratteri. 
+ * TODO:Deve usare esattamente TRE caratteri.
+ * BUG: Stampa a volte due, a volte tre caratteri.
  * Se la carta è coperta deve stampare tre asterischi
- * @return 
+ * @return (Cambio colore) [Valore][Simbolo Seme]
  */
  @Override
  public String toString() {
      if (isCoperto())
          return "***";
      else
-        return valore.toString() + seme.toString() + getColore();
+        return getColore()+valore.toString() + seme.toString() ;
  }
  
  public int compareSeme (Carta c2) {
@@ -73,12 +75,27 @@ public Carta(Seme seme, Valore valore) {
     {
         return coperto;
     }
+
+    /*** Restituisce il codice per la stampa a colori su teriminale
+     * TODO: REFACTORING, Controllare se funziona anche in Windows
+     * @return la stringa ANSI che cambia il colore sul terminal
+     */
   public String getColore(){
+      final String ANSI_RED = "\u001B[31m";
+      final String ANSI_BLACK = "\u001B[30m";
       if (seme.simbolo.equals("♥") || seme.simbolo.equals("♦"))
-          return "r";
+          return ANSI_RED;
       else 
-          return "b";
+          return ANSI_BLACK;
   }
+
+    public static void main(String[] args) {
+      Carta c = new Carta(Seme.CUORI, Valore.ASSO, false);
+      System.out.println(c);
+      c = new Carta(Seme.FIORI, Valore.DIECI, false);
+      System.out.println(c);
+    }
+
 }
 
 
