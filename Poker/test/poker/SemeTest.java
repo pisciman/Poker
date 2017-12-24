@@ -10,6 +10,10 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.junit.Assert.*;
 
 /**
@@ -63,6 +67,22 @@ public class SemeTest {
         String expResult = "FIORI";
         String result = instance.name();
         assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testOutput() {
+
+        PrintStream save_out=System.out;
+        final ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+
+        Seme.main(new String[1]);
+        assertEquals("FIORI: ♣ Ordinale: 0\n" +
+                "QUADRI: ♦ Ordinale: 1\n" +
+                "CUORI: ♥ Ordinale: 2\n" +
+                "PICCHE: ♠ Ordinale: 3\n", out.toString());
+
+        System.setOut(save_out);
     }
     
 }
