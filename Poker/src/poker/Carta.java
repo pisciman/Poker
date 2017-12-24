@@ -25,58 +25,60 @@ public class Carta {
     }
       
 public Carta(Seme seme, Valore valore) {
-        this.seme =seme;
-        this.valore =valore;
+        this.seme = seme;
+        this.valore = valore;
         this.coperto = true;
 }
 
-    /**
-     * Rappresentazione della carta. 
-     * TODO:Deve usare esattamente TRE caratteri. 
-     * Se la carta è coperta deve stampare tre asterischi
-     * @return 
-     */
-    @Override
-    public String toString() {
-        return "";
-    }
+/**
+ * Rappresentazione della carta. 
+ * TODO:Deve usare esattamente TRE caratteri. 
+ * Se la carta è coperta deve stampare tre asterischi
+ * @return 
+ */
+ @Override
+ public String toString() {
+     if (isCoperto())
+         return "***";
+     else
+        return valore.toString() + seme.toString() + getColore();
+ }
+ 
+ public int compareSeme (Carta c2) {
+     if (this.seme.ordinal() < c2.seme.ordinal())
+         return -1;
+     if (this.seme.ordinal() > c2.seme.ordinal())
+         return 1;
+     return 0;
+ } // Non credo che serva, l'ho fatto per sbaglio, in ogni caso se ce n'e' di bisogno e' qui
     
-    public Valore getValore()
-    {
-        return valore;
-    }
-    
-        public Seme getSeme()
-    {
-        return seme;
-    }
-        
-    public boolean isCoperto()
+ public int compareValore(Carta c2) {
+     if ((this.toString().equals("A")) || (c2.toString().equals("A"))) { // Controllo per gli assi (Gli assi valgono di piu')
+         if (this.toString().equals("A")) {
+             if (!c2.toString().equals("A"))
+                 return 1;
+         }
+         return -1;
+     }
+     else {
+         if (this.valore.getValore() < c2.valore.getValore())
+             return -1;
+         if (this.valore.getValore() > c2.valore.getValore())
+             return 1;
+     }
+     return 0;
+ }
+  
+  public boolean isCoperto()
     {
         return coperto;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Carta other = (Carta) obj;
-        if (this.seme != other.seme) {
-            return false;
-        }
-        if (this.valore != other.valore) {
-            return false;
-        }
-        return true;
-    }
-
+  public String getColore(){
+      if (seme.simbolo.equals("♥") || seme.simbolo.equals("♦"))
+          return "r";
+      else 
+          return "b";
+  }
 }
 
 

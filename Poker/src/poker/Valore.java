@@ -11,6 +11,12 @@ public enum Valore {
     
     public final String valore;
     
+  public static void main(String args[])
+    {
+        for (Valore i:Valore.values())
+            System.out.println(i.name() + ": " + i + " Valore: "+i.getValore());
+    }
+  
     Valore (String valore){
         this.valore = valore;
     }
@@ -30,12 +36,5 @@ public enum Valore {
  */
     public int getValore() {
         return (this.ordinal() + 1);
-    }
-    
-     public static void main(String args[])
-    {
-        for (Valore i:Valore.values())
-            System.out.println(i.name() + ": " + i + " Valore: "+i.getValore());
-    }
-    
+    }   
 }
