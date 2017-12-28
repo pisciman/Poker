@@ -18,18 +18,18 @@ public class Carta {
     final private Valore valore;
     /**Definisce lo stato (coperto(true) o scoperto(false) della carta)*/
     private boolean coperto;
-
+     
     public Carta(Seme seme, Valore valore, boolean coperto) {
         this.seme = seme;
         this.valore = valore;
         this.coperto = coperto;
     }
-
-    public Carta(Seme seme, Valore valore) {
+      
+public Carta(Seme seme, Valore valore) {
         this.seme = seme;
         this.valore = valore;
         this.coperto = true;
-    }
+}
 
     /**
     * Rappresentazione della carta.
@@ -52,8 +52,13 @@ public class Carta {
         if (this.seme.ordinal() > c2.seme.ordinal())
             return 1;
         return 0;
-    } // Non credo che serva, l'ho fatto per sbaglio, in ogni caso se ce n'e' di bisogno e' qui
+    }
 
+    /**
+     * TODO: Refactoring. La questione dell'asso deve essere risolta in modo più semplice.
+     * @param c2
+     * @return
+     */
     public int compareValore(Carta c2) {
         if ((this.toString().equals("A")) || (c2.toString().equals("A"))) /* Controllo per gli assi (Gli assi valgono di piu')*/ {
             if (this.toString().equals("A")) {
@@ -70,7 +75,12 @@ public class Carta {
         }
         return 0;
     }
-    
+
+    /**
+     * TODO: @MrcSossy: Non si devono lanciare eccezioni così. Inoltre, se sono uguali deve restituire 0
+     * @param c2
+     * @return
+     */
     public int compareTo(Carta c2) {
          if (this.compareValore(c2) == -1)
              return -1;
@@ -78,20 +88,19 @@ public class Carta {
              return 1;
         throw new Error("ERRORE: Le carte sono uguali");
     }
-    
+
     public boolean isCoperto()
     {
         return coperto;
     }
 
     /*** Restituisce il codice per la stampa a colori su teriminale
-    * TODO: REFACTORING, Controllare se funziona anche in Windows
     * @return la stringa ANSI che cambia il colore sul terminal
     */
     public String getColore(){
         final String ANSI_RED = "\u001B[31m";
         final String ANSI_BLACK = "\u001B[30m";
-        
+
         if (seme.simbolo.equals("♥") || seme.simbolo.equals("♦"))
             return ANSI_RED;
         else
@@ -105,3 +114,7 @@ public class Carta {
         System.out.println(c);
     }
 }
+
+
+
+    
