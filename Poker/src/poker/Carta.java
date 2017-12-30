@@ -43,7 +43,10 @@ public class Carta {
         if (isCoperto())
             return "***";
         else
-            return getColore()+valore.toString() + seme.toString() ;
+            if (this.valore.valore.equals("10"))
+                return getColore() + valore.toString() + seme.toString();
+            else
+                return getColore() + valore.toString() + " " + seme.toString();
     }
 
     public int compareSeme (Carta c2) {
