@@ -1,4 +1,3 @@
-
 package poker;
 
 /**
@@ -29,5 +28,4 @@ public enum Seme {
         for (Seme i:Seme.values())
             System.out.println(i.name() + ": " + i + " Ordinale: "+i.ordinal());
     }
-    
 }

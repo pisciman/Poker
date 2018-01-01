@@ -17,8 +17,7 @@ public class Mazzo {
     private Carta mazzo[] = new Carta[MAX];
     private int icarte=MAX;
     
-    public Mazzo()
-    {
+    public Mazzo() {
         genera();
         mescola();
     }  
@@ -38,8 +37,7 @@ public class Mazzo {
      */
     
     @Override
-    public String toString()
-    {
+    public String toString() {
         String str = "";
         
         for(Carta c : mazzo) 
@@ -51,14 +49,14 @@ public class Mazzo {
     /**
      * Funzione che mescola la carta
      */
-    private void mescola(){
+    private void mescola() {
         Collections.shuffle(Arrays.asList(mazzo));
     }
 
     /**
      * Pesca una carta
      */
-    public Carta pesca(){
+    public Carta pesca() {
         icarte--;
         return mazzo[icarte];
     }
