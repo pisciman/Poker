@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Giocatore">
+  <ClassDiagramComponents>
+    <Class name="Giocatore" package="poker" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nCarte" type="int" visibility="private"/>
+        <Field name="nick" type="String" visibility="private"/>
+        <Field name="soldi" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nk"/>
+          <Argument type="int" name="nC"/>
+          <Argument type="float" name="sd"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getnCarte" returnType="int" visibility="public"/>
+        <Method name="getNick" returnType="String" visibility="public"/>
+        <Method name="getSoldi" returnType="float" visibility="public"/>
+        <Method name="setnCarte" returnType="void" visibility="public">
+          <Argument type="int" name="nCarte"/>
+        </Method>
+        <Method name="setSoldi" returnType="void" visibility="public">
+          <Argument type="float" name="soldi"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
