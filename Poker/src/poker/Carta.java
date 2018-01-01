@@ -25,8 +25,8 @@ public class Carta {
     }
       
     public Carta(Seme seme, int valore) {
-        this.seme =seme;
-        this.valore =valore;
+        this.seme = seme;
+        this.valore = valore;
         this.coperto = true;
     }
 
@@ -37,8 +37,7 @@ public class Carta {
      * @return 
      */
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "Carta{seme=" + seme + ", valore=" + valore + ", coperto=" + coperto + '}';
     }
 
@@ -66,17 +65,15 @@ public class Carta {
             }
         }
         else {
-            return (""+valore);
+            return ("" + valore);
         }
     }
 
-    public Seme getSeme()
-    {
+    public Seme getSeme() {
         return seme;
     }
         
-    public boolean isCoperto()
-    {
+    public boolean isCoperto() {
         return coperto;
     }
 
