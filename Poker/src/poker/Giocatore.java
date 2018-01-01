@@ -11,7 +11,6 @@ public class Giocatore {
     
     public Giocatore(String nk, int nC, float sd) {
         this.nCarte = nC;
-        this.nick = new String();
         this.nick = nk;
         this.soldi = sd;
     }
