@@ -25,11 +25,11 @@ public class Carta {
         this.coperto = coperto;
     }
       
-public Carta(Seme seme, Valore valore) {
-        this.seme = seme;
-        this.valore = valore;
-        this.coperto = true;
-}
+    public Carta(Seme seme, Valore valore) {
+            this.seme = seme;
+            this.valore = valore;
+            this.coperto = true;
+    }
 
     /**
     * Rappresentazione della carta.
@@ -100,7 +100,7 @@ public Carta(Seme seme, Valore valore) {
     /*** Restituisce il codice per la stampa a colori su teriminale
     * @return la stringa ANSI che cambia il colore sul terminal
     */
-    public String getColore(){
+    public String getColore() {
         final String ANSI_RED = "\u001B[31m";
         final String ANSI_BLACK = "\u001B[30m";
 
@@ -117,7 +117,3 @@ public Carta(Seme seme, Valore valore) {
         System.out.println(c);
     }
 }
-
-
-
-    

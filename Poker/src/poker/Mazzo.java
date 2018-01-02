@@ -16,14 +16,14 @@ public class Mazzo {
     /**Mazzo da gioco*/
     private final int MAX = 52;
     private Carta mazzo[] = new Carta[MAX];
-    private int icarte=MAX;
+    private int icarte = MAX;
 
     /**
     * Genera in modo ordinato il mazzo di 52 carte da poker coperte
     */
     public void genera() {
         for (Seme seme : Seme.values())
-        for (Valore valore:Valore.values())
+        for (Valore valore: Valore.values())
         mazzo[valore.ordinal() + (13 * seme.ordinal())] = new Carta(seme, valore, true);
     }
 
@@ -31,9 +31,8 @@ public class Mazzo {
     * Genera in modo ordinato il mazzo di 52 carte da poker coperte
     * TODO: Migliorare l'aspetto
     */
-
-    public String toString()
-    {
+    @Override
+    public String toString() {
         String str = "";
 
         for(Carta c : mazzo)
@@ -45,7 +44,7 @@ public class Mazzo {
     /**
     * Funzione che mescola la carta
     */
-    private void Mescola(){
+    private void mescola() {
         Collections.shuffle(Arrays.asList(mazzo));
     }
 
