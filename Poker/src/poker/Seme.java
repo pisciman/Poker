@@ -19,6 +19,7 @@ public enum Seme {
 /**
  * Resituisce il simbolo del seme. 
  * Per avere il nome completo, usare .name()
+     * @return 
  */
     @Override
     public String toString() {

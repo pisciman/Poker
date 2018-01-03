@@ -30,8 +30,10 @@ public class Mazzo {
     /**
      * Genera in modo ordinato il mazzo di 52 carte da poker coperte
      * TODO: Migliorare l'aspetto
+     * @return 
      */
     
+    @Override
     public String toString()
     {
         String str = "";

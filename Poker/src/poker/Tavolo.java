@@ -1,7 +1,6 @@
-
 package poker;
 
-
-public class Tavolo {
+public class Tavolo 
+{
     
 }
