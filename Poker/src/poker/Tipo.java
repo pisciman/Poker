@@ -1,7 +1,7 @@
 /* *******************************
    *   2018(c)Project made by:   * 
    *                             * 
-   *      Gruppo Epsilon         * 
+   *       Gruppo Epsilon        * 
    ******************************* */
 
 package poker;
@@ -15,7 +15,7 @@ public enum Tipo
 {
     // ELEMENTI
     BIANCA(5), VERDE(10), BLU(20), ROSSA(50), NERA(100), VIOLA(500);
-    private final int valore;
+    public final int valore;
     
     // COSTRUTTORI
     private Tipo (int val)
@@ -24,10 +24,15 @@ public enum Tipo
     }
     
     // METODI
-    public static void main (String[] args)
+    @Override
+    public String toString ()
     {
+        return (name() + "\t\tValore: " + valore + "\t\tOrdinario: " + ordinal());
+    }
+
+    public static void main(String[] args) {
         for (Tipo c : Tipo.values()) {
-            System.out.println(c.name() + ": " + c + "\tValore : " + c.valore + "\tOrdinale : " + c.ordinal());
+            System.out.println(c);
         }
     }
 }
