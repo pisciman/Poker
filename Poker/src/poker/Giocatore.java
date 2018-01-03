@@ -1,18 +1,18 @@
 package poker;
 
 /**
- *
+ * @author Torricelli Alessio
  * @author sfemat
  */
 public class Giocatore {
     private int nCarte;
-    private String nick;
-    private float soldi;
+    private String nomeGiocatore;
+    private int soldi;
     
-    public Giocatore(String nk, int nC, float sd) {
-        this.nCarte = nC;
-        this.nick = nk;
-        this.soldi = sd;
+    public Giocatore(int nCarte, String nomeGiocatore, int soldi) {
+        this.nCarte = nCarte;
+        this.nomeGiocatore = nomeGiocatore;
+        this.soldi = soldi;
     }
 
     public int getnCarte() {
@@ -20,10 +20,10 @@ public class Giocatore {
     }
 
     public String getNick() {
-        return nick;
+        return nomeGiocatore;
     }
 
-    public float getSoldi() {
+    public int getSoldi() {
         return soldi;
     }
 
@@ -31,9 +31,12 @@ public class Giocatore {
         this.nCarte = nCarte;
     }
     
-    public void setSoldi(float soldi) {
+    public void setSoldi(int soldi) {
         this.soldi = soldi;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Giocatore{nCarte=" + nCarte + ", Nome Giocatore: " + nomeGiocatore + ", soldi: " + soldi + '}';
+    }
 }
