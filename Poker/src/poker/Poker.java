@@ -1,29 +1,40 @@
+/**
+ * @author Torricelli Alessio
+ * @author Pollarini Umberto
+ */
 package poker;
-import java.util.*;
+
+import java.util.Scanner;
 
 public class Poker {
     public static void main(String[] args) 
     {
-        Scanner input= new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
+        
         String nome;
         char sesso;
-        int età = 0;
-        int soldi;
-        // GRUPPO GIOCATORE
-        Giocatore gioca = new Giocatore();
-        System.out.println("Inserisci il tuo nome");
+        int età, soldi;
+        
+        //I parametri dell'oggetto giocatore sono per semplicità
+        Giocatore g = new Giocatore("Umberto", 'M', 18, 1000);
+        
+        //dovendo fare "l'iscrizione dell'utente" molto probabilmente useremo questo codice
+        /*
+        System.out.print("Inserisci il tuo nome: ");
         nome = input.nextLine();
-        gioca.setNomeGiocatore(nome); // SETTO IL NOME
-        System.out.println("Inserire il sesso\n [ M ] Maschio\n[ D ] Donna");
+        g.setNomeGiocatore(nome);
+        
+        System.out.print("Inserire il sesso ([ M ] Maschio, [ F ] Femmina): ");
         sesso = input.nextLine().charAt(0);
-        gioca.setSesso(sesso); // SETTO IL SESSO
-        System.out.println("Inserisci la tua vera età");
-        do{età = input.nextInt();}while(gioca.setEtà(età) != true); // CONTROLLO ETA'
-        // CARTE IN MANO?
-        System.out.println("Inserisci il tuo budget totale");
+        g.setSesso(sesso);
+        
+        System.out.print("Inserisci la tua età: ");
+        età = input.nextInt();
+        g.setEtà(età);
+        
+        System.out.print("Inserisci il tuo budget totale");
         soldi = input.nextInt();
-        gioca.setSoldi(soldi); // SETTO I SOLDI
-        //-----------------
+        g.setSoldi(soldi);
+        */
     }
-    
 }
