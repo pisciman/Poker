@@ -2,41 +2,49 @@ package poker;
 
 /**
  * @author Torricelli Alessio
- * @author sfemat
+ * @author Umberto Pollarini
  */
-public class Giocatore {
-    private int nCarte;
+public class Giocatore 
+{
+    /*
+        Metodi da Creare : 
+            - Inserimento nome
+            - Maschio o Femmina
+            - Controllo per età minima per giocare(18 anni)
+            - Carte in Mano
+            - Budget Disponibile
+    */
     private String nomeGiocatore;
+    private char sesso;
+    private int età;
+    private int nCarte;
     private int soldi;
+
+    // INSERIMENTO NOME GIOCATORE
     
-    public Giocatore(int nCarte, String nomeGiocatore, int soldi) {
-        this.nCarte = nCarte;
+    public void setNomeGiocatore(String nomeGiocatore) 
+    {
         this.nomeGiocatore = nomeGiocatore;
-        this.soldi = soldi;
-    }
-
-    public int getnCarte() {
-        return nCarte;
-    }
-
-    public String getNick() {
-        return nomeGiocatore;
-    }
-
-    public int getSoldi() {
-        return soldi;
-    }
-
-    public void setnCarte(int nCarte) {
-        this.nCarte = nCarte;
     }
     
-    public void setSoldi(int soldi) {
-        this.soldi = soldi;
+    // INSERIMENTO SESSO GIOCATORE
+    public void setSesso(char sesso) 
+    {
+        this.sesso = sesso;
+    }
+    
+    //CONTROLLO ETA'
+    public boolean setEtà(int età) 
+    {
+        if(età < 18) return false;
+        if(età >= 18) return true;
+        return false;
     }
 
-    @Override
-    public String toString() {
-        return "Giocatore{nCarte=" + nCarte + ", Nome Giocatore: " + nomeGiocatore + ", soldi: " + soldi + '}';
+    public void setSoldi(int soldi) 
+    {
+        this.soldi = soldi;
     }
+    
+    
 }
