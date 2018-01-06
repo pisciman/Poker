@@ -85,11 +85,11 @@ public class Carta {
      * @return
      */
     public int compareTo(Carta c2) {
-         if (this.compareValore(c2) == -1)
-             return -1;
-         if (this.compareValore(c2) == 1)
-             return 1;
-        throw new Error("ERRORE: Le carte sono uguali");
+        if (this.compareValore(c2) == -1)
+            return -1;
+        if (this.compareValore(c2) == 1)
+            return 1;
+        return 0;
     }
 
     public boolean isCoperto()
@@ -97,7 +97,8 @@ public class Carta {
         return coperto;
     }
 
-    /*** Restituisce il codice per la stampa a colori su teriminale
+    /**
+    * Restituisce il codice per la stampa a colori su teriminale
     * @return la stringa ANSI che cambia il colore sul terminal
     */
     public String getColore() {
