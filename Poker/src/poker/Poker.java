@@ -1,15 +1,8 @@
-/**
- * @author Alessio Torricelli
- * @version 1.0
-**/
+
 package poker;
 
+import java.util.Scanner;
 
 public class Poker {
 
-
-    public static void main(String[] args) {
-        
-    }
-    
 }

@@ -1,5 +1,5 @@
 package poker;
 
-public class Tavolo {
+public class Fiches {
     
 }
