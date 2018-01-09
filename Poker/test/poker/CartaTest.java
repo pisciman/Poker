@@ -15,4 +15,20 @@ public class CartaTest {
         String expResult = "\u001B[31mA ♥";
         assertEquals(expResult, c.toString());
     }
+    
+    @Test
+    public void testCompare() {
+        Carta c = new Carta(Seme.CUORI, Valore.TRE, false);
+        Carta c2 = new Carta(Seme.CUORI, Valore.SEI, false);
+        
+        assertTrue(c.compareTo(c2) == -1);
+    }
+    
+    @Test
+    public void testCompareAssi() {
+        Carta c = new Carta(Seme.CUORI, Valore.ASSO, false);
+        Carta c2 = new Carta(Seme.CUORI, Valore.TRE, false);
+        
+        assertTrue(c.compareTo(c2) == 1);
+    }
 }
