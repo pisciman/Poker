@@ -1,16 +1,16 @@
 package poker;
 
 /**
-* Si usa l'ordine dei semi italiano (che non è quello inglese)
-* @author piffy
-* @author Torricelli (il main di prova)
-*/
+ * Si usa l'ordine dei semi italiano (che non è quello inglese)
+ * @author piffy
+ * @author Torricelli (il main di prova)
+ */
 public enum Seme {
-    FIORI("♣"),QUADRI("♦"),CUORI("♥"),PICCHE("♠");
+    FIORI("♣"), QUADRI("♦"), CUORI("♥"), PICCHE("♠");
     public final String simbolo;
 
-    Seme(String s){
-        simbolo=s;
+    Seme(String s) {
+        simbolo = s;
     }
 
     /**
@@ -22,9 +22,8 @@ public enum Seme {
         return simbolo;
     }
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         for (Seme i:Seme.values())
-        System.out.println(i.name() + ": " + i.toString() + " Ordinale: "+i.ordinal());
+            System.out.println(i.name() + ": " + i + " Ordinale: "+i.ordinal());
     }
 }

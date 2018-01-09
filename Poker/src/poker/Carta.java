@@ -102,7 +102,7 @@ public class Carta {
     * Restituisce il codice per la stampa a colori su teriminale
     * @return la stringa ANSI che cambia il colore sul terminal
     */
-    public String getColore(){
+    public String getColore() {
         final String ANSI_RED = "\u001B[31m";
         final String ANSI_BLACK = "\u001B[30m";
 
@@ -112,7 +112,3 @@ public class Carta {
             return ANSI_BLACK;
     }
 }
-
-
-
-    
