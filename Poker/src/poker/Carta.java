@@ -110,13 +110,6 @@ public Carta(Seme seme, Valore valore) {
         else
             return ANSI_BLACK;
     }
-
-    public static void main(String[] args) {
-        Carta c = new Carta(Seme.CUORI, Valore.ASSO, false);
-        System.out.println(c);
-        c = new Carta(Seme.FIORI, Valore.DIECI, false);
-        System.out.println(c);
-    }
 }
 
 
