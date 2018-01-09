@@ -6,51 +6,32 @@
 
 package poker;
 
-/** Semplice classe che rappresenta una fiche del poker, ovvero un gettone, il cui utilizzo è quello
- * di venir usato come segnapunti o in sostituzione del denaro.
- * Le fiches possiedono valori differenti a differenza del colore (esempio: rosso = 50€).
+/** Fiches usate per i tornei di poker da 4 a 8 giocatori
  * 
  * @author Abati David
  * @author Nicolini Simone */
 
-public class Fiche 
+public enum Fiche 
 {
-    // ATTRIBUTI
-    public static int maxFiches;
-    private final Tipo categoria;
+    // ELEMENTI
+    BIANCA(5), VERDE(10), BLU(20), ROSSA(50), NERA(100), VIOLA(500);
+    public final int valore;
     
     // COSTRUTTORI
-    /** Permette la creazione di una nuova fiche.
-     * 
-     * @param genere Corrisponde al colore della fiche ed il valore in denaro. */
-    
-    public Fiche (Tipo genere)
+    private Fiche (int val)
     {
-        this.categoria = genere;
+        this.valore = val;
     }
     
     // METODI
-    /** In base alla fiche corrente, viene restituito il suo valore. Quest'ultimo dovrebbe essere
-     * sommato assieme quello delle altre fiche in mano al singolo giocatore.
-     * 
-     * @return Ritorna il valore della fiche corrente */
-    
-    public int getFicheValue () {
-        return categoria.valore;
-    }
-    
-    /** Descrizione della fiche corrente. Più specificatamente: il colore e valore corrispondenti
-     * 
-     * @return Ritorna una descrizione della fiche */
-    
     @Override
     public String toString () {
-        return "Fiche { categoria : " + categoria + "}";
+        return (name() + "\t\tValore: " + valore + "\t\tOrdinario: " + ordinal());
     }
-    
+
     public static void main(String[] args) {
-        Fiche f = new Fiche(Tipo.VERDE);
-        
-        System.out.println(f);
+        for (Fiche c : Fiche.values()) {
+            System.out.println(c);
+        }
     }
 }
