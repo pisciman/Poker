@@ -35,5 +35,15 @@ public class Giocatore {
         this.soldi = soldi;
     }
     
+     /**
+     * @author simodangio
+     * @return 
+     *
+     */
+    
+    @Override
+    public String toString() {
+        return "Giocatore{" + "nCarte=" + nCarte + ", nick=" + nick + ", soldi=" + soldi + '}';
+    }
     
 }
