@@ -63,9 +63,9 @@ public class Carta {
      * @return
      */
     public int compareValore(Carta c2) {
-        if ((this.toString().equals("A")) || (c2.toString().equals("A"))) /* Controllo per gli assi (Gli assi valgono di piu')*/ {
-            if (this.toString().equals("A")) {
-                if (!c2.toString().equals("A"))
+        if ((this.valore.equals(Valore.ASSO)) || (c2.valore.equals(Valore.ASSO))){ /* Controllo per gli assi (Gli assi valgono di piu')*/
+            if (this.valore.equals(Valore.ASSO)) {
+                if (!c2.valore.equals(Valore.ASSO))
                     return 1;
             }
             return -1;
@@ -80,8 +80,9 @@ public class Carta {
     }
 
     /**
-     * TODO: @MrcSossy: Non si devono lanciare eccezioni così. Inoltre, se sono uguali deve restituire 0
-     * @param c2
+     * Compara due carte tenendo conto del valore soltanto (regole texas hold'em).
+     * 
+     * @param c2 Seconda carta da confrontare con quella corrente
      * @return
      */
     public int compareTo(Carta c2) {
