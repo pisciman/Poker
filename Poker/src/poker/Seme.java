@@ -9,14 +9,15 @@ public enum Seme {
     FIORI("♣"), QUADRI("♦"), CUORI("♥"), PICCHE("♠");
     public final String simbolo;
 
-    Seme(String s) {
-        simbolo = s;
-    }
-
-    /**
-    * Resituisce il simbolo del seme.
-    * Per avere il nome completo, usare .name()
-    */
+    Seme(String s){
+        simbolo=s;
+    };
+    
+/**
+ * Resituisce il simbolo del seme. 
+ * Per avere il nome completo, usare .name()
+     * @return 
+ */
     @Override
     public String toString() {
         return simbolo;
