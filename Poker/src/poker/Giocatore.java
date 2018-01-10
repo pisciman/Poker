@@ -6,6 +6,7 @@ package poker;
  * @author Torricelli Alessio
  * @author Pollarini Umberto
  * @author Sferruzza Matteo
+ * @author D'angiolella Simone
  */
 public class Giocatore 
 {
@@ -57,5 +58,11 @@ public class Giocatore
 
     public void setSoldi(int soldi) {
         this.soldi = soldi;
+    }
+
+    @Override
+    public String toString() {
+        //da mettere a posto nCarte
+        return "Giocatore{" /*+ "nCarte=" + nCarte*/ + ", nick=" + nick + ", soldi=" + soldi + '}';
     }
 }
