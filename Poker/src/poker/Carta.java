@@ -31,10 +31,13 @@ public class Carta {
             this.coperto = true;
     }
 
+    public int getValore() {
+        return valore.getValore();
+    }
+    
     /**
     * Rappresentazione della carta.
-    * TODO:Deve usare esattamente TRE caratteri.
-    * BUG: Stampa a volte due, a volte tre caratteri.
+    * 
     * Se la carta è coperta deve stampare tre asterischi
     * @return (Cambio colore) [Valore][Simbolo Seme]
     */
@@ -63,18 +66,21 @@ public class Carta {
      * @return
      */
     public int compareValore(Carta c2) {
-        if ((this.valore.equals(Valore.ASSO)) || (c2.valore.equals(Valore.ASSO))){ /* Controllo per gli assi (Gli assi valgono di piu')*/
-            if (this.valore.equals(Valore.ASSO)) {
-                if (!c2.valore.equals(Valore.ASSO))
-                    return 1;
-            }
-            return -1;
+        if (this.valore.equals(Valore.ASSO)){ /* Controllo per gli assi (Gli assi valgono di piu')*/
+            if (c2.valore.equals(Valore.ASSO))
+                return 0;
+            else
+                return 1;
         }
         else {
-            if (this.valore.getValore() < c2.valore.getValore())
+            if (c2.valore.equals(Valore.ASSO))
                 return -1;
-            if (this.valore.getValore() > c2.valore.getValore())
-                return 1;
+            else {
+                if (this.getValore() < c2.getValore())
+                    return -1;
+                if (this.getValore() > c2.getValore())
+                    return 1;
+            }
         }
         return 0;
     }
