@@ -63,9 +63,9 @@ public class Carta {
      * @return
      */
     public int compareValore(Carta c2) {
-        if ((this.toString().equals("A")) || (c2.toString().equals("A"))) /* Controllo per gli assi (Gli assi valgono di piu')*/ {
-            if (this.toString().equals("A")) {
-                if (!c2.toString().equals("A"))
+        if ((this.valore.equals(Valore.ASSO)) || (c2.valore.equals(Valore.ASSO))){ /* Controllo per gli assi (Gli assi valgono di piu')*/
+            if (this.valore.equals(Valore.ASSO)) {
+                if (!c2.valore.equals(Valore.ASSO))
                     return 1;
             }
             return -1;
@@ -80,16 +80,17 @@ public class Carta {
     }
 
     /**
-     * TODO: @MrcSossy: Non si devono lanciare eccezioni così. Inoltre, se sono uguali deve restituire 0
-     * @param c2
+     * Compara due carte tenendo conto del valore soltanto (regole texas hold'em).
+     * 
+     * @param c2 Seconda carta da confrontare con quella corrente
      * @return
      */
     public int compareTo(Carta c2) {
-         if (this.compareValore(c2) == -1)
-             return -1;
-         if (this.compareValore(c2) == 1)
-             return 1;
-        throw new Error("ERRORE: Le carte sono uguali");
+        if (this.compareValore(c2) == -1)
+            return -1;
+        if (this.compareValore(c2) == 1)
+            return 1;
+        return 0;
     }
 
     public boolean isCoperto()
@@ -97,7 +98,8 @@ public class Carta {
         return coperto;
     }
 
-    /*** Restituisce il codice per la stampa a colori su teriminale
+    /**
+    * Restituisce il codice per la stampa a colori su teriminale
     * @return la stringa ANSI che cambia il colore sul terminal
     */
     public String getColore() {
@@ -108,12 +110,5 @@ public class Carta {
             return ANSI_RED;
         else
             return ANSI_BLACK;
-    }
-
-    public static void main(String[] args) {
-        Carta c = new Carta(Seme.CUORI, Valore.ASSO, false);
-        System.out.println(c);
-        c = new Carta(Seme.FIORI, Valore.DIECI, false);
-        System.out.println(c);
     }
 }
