@@ -9,6 +9,7 @@ import java.util.Scanner;
  * @author Pollarini Umberto
  * @author Sferruzza Matteo
  * @author D'angiolella Simone
+ * @author Cavalieri Melissa
  */
 public class Giocatore 
 {
@@ -20,10 +21,19 @@ public class Giocatore
             - Carte in Mano
             - Budget Disponibile
     */
+    /**
+     * dichiarazione variabili
+     */
     private String nomeGiocatore;
     private char sesso;
     private int età, soldi/*, nCarte*/;
-    
+    /**
+     * costruttore
+     * @param nomeGiocatore
+     * @param sesso
+     * @param età
+     * @param soldi 
+     */
     //dubito della necessità di sapere il numero di carte in mano
     public Giocatore(String nomeGiocatore, char sesso, int età/*, int nCarte*/, int soldi) {
         this.nomeGiocatore = nomeGiocatore;
@@ -34,7 +44,10 @@ public class Giocatore
     }
 
     // INSERIMENTO NOME GIOCATORE
-    
+    /**
+     * serve per settare il nome del giocatore
+     * @param nomeGiocatore 
+     */
     public void setNomeGiocatore(String nomeGiocatore) {
         //Qui potremmo inserire il nome direttamente dall'utente in qualche modo con
         //Scanner scan = new Scanner(System.in);
@@ -42,13 +55,20 @@ public class Giocatore
         
         this.nomeGiocatore = nomeGiocatore;
     }
-    
+    /**
+     * controlla il sesso del giocatore
+     * @param sesso 
+     */
     // INSERIMENTO SESSO GIOCATORE
     public void setSesso(char sesso) {
         //Manca controllo del sesso (uguale a quello dell'età)
         this.sesso = sesso;
     }
     
+   /**
+    *  serve per controllare l' eta
+    * @param età 
+    */
     //CONTROLLO ETA'
     public void setEtà(int età) {
         //andava abbastanza bene ma ricorda che è un set quindi è un void (per umbo)
@@ -57,16 +77,25 @@ public class Giocatore
         else
             this.età = 18;
     }
+    
+    /**
+     * gestisce i soldi
+     * @param soldi 
+     */
 
     public void setSoldi(int soldi) {
         this.soldi = soldi;
     }
 
-
+/**
+ * tostring
+ * @return 
+ */
     @Override
     public String toString() {
         //da mettere a posto nCarte
-        return "Giocatore{" /*+ "nCarte=" + nCarte*/ + ", nick=" + nick + ", soldi=" + soldi + '}';
+        return "Giocatore{" /*+ "nCarte=" + nCarte*/ + ", nick=" + nomeGiocatore + ", soldi=" + soldi + '}';
+    }
 
     public static void main(String[] args)
     {
