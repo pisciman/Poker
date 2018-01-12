@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/piffy/NetBeansProjects/Poker/Poker/src/poker/Fiche.java</file>
-            <file>file:/home/piffy/NetBeansProjects/Poker/Poker/src/poker/Mazzo.java</file>
-            <file>file:/home/piffy/NetBeansProjects/Poker/Poker/src/poker/Seme.java</file>
-            <file>file:/home/piffy/NetBeansProjects/Poker/Poker/src/poker/Tavolo.java</file>
+            <file>file:/C:/Users/Roberto/Desktop/Poker-GAMMA/Poker/src/poker/Giocatore.java</file>
+            <file>file:/C:/Users/Roberto/Desktop/Poker-GAMMA/Poker/src/poker/Seme.java</file>
+            <file>file:/C:/Users/Roberto/Desktop/Poker-GAMMA/Poker/src/poker/Poker.java</file>
+            <file>file:/C:/Users/Roberto/Desktop/Poker-GAMMA/Poker/src/poker/Valore.java</file>
+            <file>file:/C:/Users/Roberto/Desktop/Poker-GAMMA/Poker/test/poker/GiocatoreTest.java</file>
+            <file>file:/C:/Users/Roberto/Desktop/Poker-GAMMA/Poker/src/poker/Carta.java</file>
+            <file>file:/C:/Users/Roberto/Desktop/Poker-GAMMA/Poker/src/poker/Mazzo.java</file>
         </group>
     </open-files>
 </project-private>
