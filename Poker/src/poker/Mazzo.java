@@ -37,7 +37,8 @@ public class Mazzo {
 
     /**
      * Stampa 52 carte da poker coperte
-     * TODO: Migliorare l'aspetto
+     * TODO: Così la stampa fa veramente schifo ed è inutile
+     * Vedie issue #54
      * @return (<code>String</code>)
      */
     @Override
