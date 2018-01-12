@@ -1,13 +1,13 @@
 package poker;
 
-//import java.util.Scanner;
-
 import java.util.Scanner;
 
 /**
- * @author Torricelli Alessio Alessio9284
+ * @author Torricelli Alessio
  * @author Pollarini Umberto
  * @author Sferruzza Matteo
+ * @author D'angiolella Simone
+ * @author Cavalieri Melissa
  */
 public class Giocatore 
 {
@@ -19,10 +19,19 @@ public class Giocatore
             - Carte in Mano
             - Budget Disponibile
     */
+    
+    /* Dichiarazione Variabili */
     private String nomeGiocatore;
     private char sesso;
     private int età, soldi/*, nCarte*/;
     
+    /**
+     * costruttore
+     * @param nomeGiocatore
+     * @param sesso
+     * @param età
+     * @param soldi 
+     */
     //dubito della necessità di sapere il numero di carte in mano
     public Giocatore(String nomeGiocatore, char sesso, int età/*, int nCarte*/, int soldi) {
         this.nomeGiocatore = nomeGiocatore;
@@ -33,21 +42,31 @@ public class Giocatore
     }
 
     // INSERIMENTO NOME GIOCATORE
-    
+    /**
+     * Serve per settare il nome del giocatore
+     * @param nomeGiocatore Nome Scelto
+     */
     public void setNomeGiocatore(String nomeGiocatore) {
         //Qui potremmo inserire il nome direttamente dall'utente in qualche modo con
         //Scanner scan = new Scanner(System.in);
         
-        
         this.nomeGiocatore = nomeGiocatore;
     }
     
+    /**
+     * Serve per settare il sesso del giocatore
+     * @param sesso (Maschio o Femmina)
+     */
     // INSERIMENTO SESSO GIOCATORE
     public void setSesso(char sesso) {
         //Manca controllo del sesso (uguale a quello dell'età)
         this.sesso = sesso;
     }
     
+   /**
+    * Serve per settare l'età del giocatore (controllo)
+    * @param età 
+    */
     //CONTROLLO ETA'
     public void setEtà(int età) {
         //andava abbastanza bene ma ricorda che è un set quindi è un void (per umbo)
@@ -56,14 +75,23 @@ public class Giocatore
         else
             this.età = 18;
     }
-
+    
+    /**
+     * gestisce i soldi
+     * @param soldi 
+     */
     public void setSoldi(int soldi) {
         this.soldi = soldi;
     }
 
+    /**
+     * toString del Giocatore
+     * @return Nome, Fiches e ... (<code>String</code>)
+     */
+    @Override
     public String toString() {
-        //TODO: Da fare
-       return "";
+        //da mettere a posto nCarte
+        return "Giocatore{" /*+ "nCarte=" + nCarte*/ + ", nick=" + nomeGiocatore + ", soldi=" + soldi + '}';
     }
 
     public static void main(String[] args)
@@ -78,7 +106,6 @@ public class Giocatore
         Giocatore g = new Giocatore("Umberto", 'M', 18, 1000);
 
         //dovendo fare "l'iscrizione dell'utente" molto probabilmente useremo questo codice
-
         System.out.print("Inserisci il tuo nome: ");
         nome = input.nextLine();
         g.setNomeGiocatore(nome);
@@ -94,6 +121,5 @@ public class Giocatore
         System.out.print("Inserisci il tuo budget totale");
         soldi = input.nextInt();
         g.setSoldi(soldi);
-
     }
 }
