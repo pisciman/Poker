@@ -6,43 +6,41 @@ package poker;
  */
 
 public class Mano {
-    public static void main(String[] args) {
-        int Giocatori = 5;
-        int carte = 5;        
-        
-        String[] seme = { "♣", "♦", "♥", "♠" };
-        String[] valore = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J",
-            "Q", "K", "A" };
-        
-        
-        int SUITS = seme.length;
-        int RANKS = valore.length;
-        int DECK_SIZE = SUITS * RANKS;
-        
-        // crea mazzo
-        String[] mazzo = new String[DECK_SIZE];
-        for (int i = 0; i < RANKS; i++) {
-            for (int j = 0; j < SUITS; j++) {
-                mazzo[SUITS*i + j] = valore[i] + seme[j];
-            }
+
+       private  Mazzo deck[] = new Mazzo[52];
+    //   private int Giocatori = 5;
+       private int N_Carte = 5;
+       private Mazzo Mano[] = new Mazzo[5];
+
+        /**
+         * costruttore
+         */
+        public void Mano(){ 
+            genera_mano();
         }
         
-        // mischia le carte e da le carte
-        for (int hands = 0; hands < Giocatori; hands++) {
-            
-            // shuffle
-            for (int i = 0; i < DECK_SIZE; i++) {
-                int r = i + (int) (Math.random() * (DECK_SIZE-i));
-                String t = mazzo[r];
-                mazzo[r] = mazzo[i];
-                mazzo[i] = t;
-            }
-            
-            // stampa le carte in mano
-            for (int i = 0; i < carte; i++) {
-                System.out.print(mazzo[i] + " ");
-            }
-            System.out.println();
+        /**
+         * genera un array chiamato mano che contiene 5 carte
+         */
+        public void genera_mano(){
+            for (int i = 0; i < N_Carte ; i++){
+
+             Mano[i] = deck[i];
+            } 
         }
+
+      @Override
+      public String toString() {
+        return "Mano{" + Mano + '}';
+        }
+
+    
+      public static void main (String args[]) {
+        Mano m = new Mano();
+        System.out.println(m);
+    }       
+        
+       
     }
-} 
+
+
