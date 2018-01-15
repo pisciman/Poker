@@ -20,7 +20,7 @@ public class Mano {
         }
         
         /**
-         * genera un array chiamato mano che contiene 5 carte
+         * genera un array chiamato mano che contiene 5 carteff 
          */
         public void genera_mano(){
             for (int i = 0; i < N_Carte ; i++){
