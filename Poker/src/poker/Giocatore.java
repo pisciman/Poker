@@ -75,6 +75,13 @@ public class Giocatore
         else
             this.età = 18;
     }
+    /**
+     * Restituisce l'età del giocatore 
+     * @return età del giocatore
+     */
+    public int getEtà() {
+        return età;
+    }
     
     /**
      * gestisce i soldi
@@ -82,6 +89,13 @@ public class Giocatore
      */
     public void setSoldi(int soldi) {
         this.soldi = soldi;
+    }
+    /**
+     * Restituisce il numero di soldi in possesso del giocatore
+     * @return i soldi
+     */
+    public int getSoldi() {
+        return soldi;
     }
 
     /**
