@@ -9,8 +9,7 @@ import java.util.Scanner;
  * @author D'angiolella Simone
  * @author Cavalieri Melissa
  */
-public class Giocatore 
-{
+public class Giocatore {
     /*
         Metodi da Creare : 
             - Inserimento nome
@@ -23,7 +22,7 @@ public class Giocatore
     /* Dichiarazione Variabili */
     private String nomeGiocatore;
     private char sesso;
-    private int età, soldi/*, nCarte*/;
+    private int età, soldi;
     
     /**
      * costruttore
@@ -33,11 +32,10 @@ public class Giocatore
      * @param soldi 
      */
     //dubito della necessità di sapere il numero di carte in mano
-    public Giocatore(String nomeGiocatore, char sesso, int età/*, int nCarte*/, int soldi) {
+    public Giocatore(String nomeGiocatore, char sesso, int età, int soldi) {
         this.nomeGiocatore = nomeGiocatore;
         this.sesso = sesso;
         this.età = età;
-        //this.nCarte = nCarte;
         this.soldi = soldi;
     }
 
@@ -75,6 +73,13 @@ public class Giocatore
         else
             this.età = 18;
     }
+    /**
+     * Restituisce l'età del giocatore 
+     * @return età del giocatore
+     */
+    public int getEtà() {
+        return età;
+    }
     
     /**
      * gestisce i soldi
@@ -82,6 +87,13 @@ public class Giocatore
      */
     public void setSoldi(int soldi) {
         this.soldi = soldi;
+    }
+    /**
+     * Restituisce il numero di soldi in possesso del giocatore
+     * @return i soldi
+     */
+    public int getSoldi() {
+        return soldi;
     }
 
     /**
@@ -91,35 +103,27 @@ public class Giocatore
     @Override
     public String toString() {
         //da mettere a posto nCarte
-        return "Giocatore{" /*+ "nCarte=" + nCarte*/ + ", nick=" + nomeGiocatore + ", soldi=" + soldi + '}';
+        return "Giocatore{nick=" + nomeGiocatore + ", soldi=" + soldi + '}';
     }
 
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
 
-        String nome;
-        char sesso;
-        int età, soldi;
-
         //I parametri dell'oggetto giocatore sono per semplicità
         Giocatore g = new Giocatore("Umberto", 'M', 18, 1000);
 
         //dovendo fare "l'iscrizione dell'utente" molto probabilmente useremo questo codice
         System.out.print("Inserisci il tuo nome: ");
-        nome = input.nextLine();
-        g.setNomeGiocatore(nome);
+        g.setNomeGiocatore(input.nextLine());
 
         System.out.print("Inserire il sesso ([ M ] Maschio, [ F ] Femmina): ");
-        sesso = input.nextLine().charAt(0);
-        g.setSesso(sesso);
+        g.setSesso(input.nextLine().charAt(0));
 
         System.out.print("Inserisci la tua età: ");
-        età = input.nextInt();
-        g.setEtà(età);
+        g.setEtà(input.nextInt());
 
         System.out.print("Inserisci il tuo budget totale");
-        soldi = input.nextInt();
-        g.setSoldi(soldi);
+        g.setSoldi(input.nextInt());
     }
 }
