@@ -4,7 +4,7 @@ package poker;
 public class Tavolo 
 {
     private Mazzo mazzo = new Mazzo();
-    private Fiches fiches = new Fiches();
+    //TODO: Fiche
     private Giocatore giocatore[];
     
 public void main(String args[])
