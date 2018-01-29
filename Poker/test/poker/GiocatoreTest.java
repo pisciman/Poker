@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package poker;
 
 import org.junit.After;
@@ -13,26 +8,27 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author Roberto
+ * @author Torricelli Alessio
+ * @author Sferruzza Matteo
  */
 public class GiocatoreTest {
-    
+
+
     public GiocatoreTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -40,6 +36,6 @@ public class GiocatoreTest {
     /**
      * TODO: TEST CHE ABBIANO SENSO E NON SIANO DEFAULT
      */
-    
-    
+
+
 }
