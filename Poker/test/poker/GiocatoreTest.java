@@ -17,7 +17,7 @@ public class GiocatoreTest {
         Giocatore g = new Giocatore("Gianfranco", 'M', 18, 500);
         assertEquals("Giocatore{nick: Gianfranco, sesso: M, anni: 18, soldi: 500}", g.toString());
     }
-
+    
     @Test
     public void testSetSesso() {
         Giocatore g = new Giocatore("Alessio", 'C', 19, 1000);
