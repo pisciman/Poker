@@ -1,9 +1,5 @@
 package poker;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -11,12 +7,24 @@ import static org.junit.Assert.*;
  * @author Torricelli Alessio
  * @author Sferruzza Matteo
  * @author Cavalieri Melissa
+ * @author Pollarini Umberto 
  */
 public class GiocatoreTest {
 
-    /**
-     * Test of setEtà method, of class Giocatore.
-     */
+    //Pollarini
+    @Test
+    public void testToString() {
+        Giocatore g = new Giocatore("Gianfranco", 'M', 18, 500);
+        assertEquals("Giocatore{nick: Gianfranco, sesso: M, anni: 18, soldi: 500}", g.toString());
+    }
+
+    @Test
+    public void testSetSesso() {
+        Giocatore g = new Giocatore("Alessio", 'C', 19, 1000);
+        assertTrue('M' == g.getSesso());
+    }
+    
+    //Sferruzza
     @Test
     public void testSetEtà() {
 	Giocatore g = new Giocatore("Giorgia", 'F', 20, 2000);
@@ -25,9 +33,6 @@ public class GiocatoreTest {
 	assertTrue(18 == g.getEtà());
     }
     
-    /**
-     * Test of setSoldi method, of class Giocatore.
-     */
     @Test
     public void testSetSoldi() {
 	Giocatore g = new Giocatore("Federico", 'M', 28, 3000);
@@ -36,7 +41,7 @@ public class GiocatoreTest {
 	assertFalse(3000 == g.getSoldi());
     }
     
-    
+    //Cavalieri
     @Test
     public void testGetNomeGiocatore() {
         Giocatore g = new Giocatore("Giovanni", 'M', 23, 2500);
@@ -49,5 +54,5 @@ public class GiocatoreTest {
 	assertEquals("", g.getNomeGiocatore());
 	g.setNomeGiocatore("Giovanni");
 	assertEquals("Giovanni", g.getNomeGiocatore());
-}
+    }
 }

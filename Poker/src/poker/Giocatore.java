@@ -39,14 +39,6 @@ public class Giocatore {
         this.soldi = soldi;
     }
 
-    public Giocatore(String nomeGiocatore, char sesso, int età, int soldi) 
-    {
-        this.nomeGiocatore = nomeGiocatore;
-        this.sesso = sesso;
-        this.età = età;
-        this.soldi = soldi;
-    }
-
     // INSERIMENTO NOME GIOCATORE
     /**
      * Serve per settare il nome del giocatore
@@ -107,6 +99,10 @@ public class Giocatore {
     public int getSoldi() {
         return soldi;
     }
+    
+    public String getNomeGiocatore() {
+        return nomeGiocatore;
+    }
 
     /**
      * toString del Giocatore
@@ -136,10 +132,4 @@ public class Giocatore {
         System.out.print("Inserisci il tuo budget totale");
         g.setSoldi(input.nextInt());
     }
-
-    public String getNomeGiocatore() {
-        return nomeGiocatore;
-    }
-    
-    
 }
