@@ -20,11 +20,24 @@ public class Giocatore
     private int nCarte;
     private int soldi;
 
+    public Giocatore(String nomeGiocatore, char sesso, int età, int soldi) 
+    {
+        this.nomeGiocatore = nomeGiocatore;
+        this.sesso = sesso;
+        this.età = età;
+        this.soldi = soldi;
+    }
+
     // INSERIMENTO NOME GIOCATORE
     
     public void setNomeGiocatore(String nomeGiocatore) 
     {
         this.nomeGiocatore = nomeGiocatore;
+    }
+
+    public char getSesso() 
+    {
+        return sesso;
     }
     
     // INSERIMENTO SESSO GIOCATORE
@@ -44,6 +57,11 @@ public class Giocatore
     public void setSoldi(int soldi) 
     {
         this.soldi = soldi;
+    }
+
+    @Override
+    public String toString() {
+        return "Giocatore{" + "nick: " + nomeGiocatore + ", sesso: " + sesso + ", anni: " + età + ", soldi: " + soldi + '}';
     }
     
     
