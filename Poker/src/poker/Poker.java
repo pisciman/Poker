@@ -1,9 +1,9 @@
 package poker;
-import java.util.*;
+
+import java.util.Scanner;
 
 public class Poker {
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args) {
         Scanner input= new Scanner(System.in);
         String nome;
         char sesso;
@@ -25,5 +25,4 @@ public class Poker {
         gioca.setSoldi(soldi); // SETTO I SOLDI
         //-----------------
     }
-    
 }

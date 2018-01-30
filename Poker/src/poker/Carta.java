@@ -31,10 +31,13 @@ public class Carta {
             this.coperto = true;
     }
 
+    public int getValore() {
+        return valore.getValore();
+    }
+    
     /**
     * Rappresentazione della carta.
-    * TODO:Deve usare esattamente TRE caratteri.
-    * BUG: Stampa a volte due, a volte tre caratteri.
+    * 
     * Se la carta è coperta deve stampare tre asterischi
     * @return (Cambio colore) [Valore][Simbolo Seme]
     */
@@ -63,33 +66,37 @@ public class Carta {
      * @return
      */
     public int compareValore(Carta c2) {
-        if ((this.toString().equals("A")) || (c2.toString().equals("A"))) /* Controllo per gli assi (Gli assi valgono di piu')*/ {
-            if (this.toString().equals("A")) {
-                if (!c2.toString().equals("A"))
-                    return 1;
-            }
-            return -1;
+        if (this.valore.equals(Valore.ASSO)){ /* Controllo per gli assi (Gli assi valgono di piu')*/
+            if (c2.valore.equals(Valore.ASSO))
+                return 0;
+            else
+                return 1;
         }
         else {
-            if (this.valore.getValore() < c2.valore.getValore())
+            if (c2.valore.equals(Valore.ASSO))
                 return -1;
-            if (this.valore.getValore() > c2.valore.getValore())
-                return 1;
+            else {
+                if (this.getValore() < c2.getValore())
+                    return -1;
+                if (this.getValore() > c2.getValore())
+                    return 1;
+            }
         }
         return 0;
     }
 
     /**
-     * TODO: @MrcSossy: Non si devono lanciare eccezioni così. Inoltre, se sono uguali deve restituire 0
-     * @param c2
+     * Compara due carte tenendo conto del valore soltanto (regole texas hold'em).
+     * 
+     * @param c2 Seconda carta da confrontare con quella corrente
      * @return
      */
     public int compareTo(Carta c2) {
-         if (this.compareValore(c2) == -1)
-             return -1;
-         if (this.compareValore(c2) == 1)
-             return 1;
-        throw new Error("ERRORE: Le carte sono uguali");
+        if (this.compareValore(c2) == -1)
+            return -1;
+        if (this.compareValore(c2) == 1)
+            return 1;
+        return 0;
     }
 
     public boolean isCoperto()
@@ -97,7 +104,8 @@ public class Carta {
         return coperto;
     }
 
-    /*** Restituisce il codice per la stampa a colori su teriminale
+    /**
+    * Restituisce il codice per la stampa a colori su teriminale
     * @return la stringa ANSI che cambia il colore sul terminal
     */
     public String getColore() {
@@ -108,12 +116,5 @@ public class Carta {
             return ANSI_RED;
         else
             return ANSI_BLACK;
-    }
-
-    public static void main(String[] args) {
-        Carta c = new Carta(Seme.CUORI, Valore.ASSO, false);
-        System.out.println(c);
-        c = new Carta(Seme.FIORI, Valore.DIECI, false);
-        System.out.println(c);
     }
 }

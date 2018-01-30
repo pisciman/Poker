@@ -15,7 +15,7 @@ gource \
     --max-files 0  \
     --background-colour 000000 \
     --font-size 22 \
-    --title "Poker - master branch November 2017 - December 2017" \
+    --title "Poker - master branch November 2017 - January 2018" \
     --output-ppm-stream - \
     --output-framerate 30 \
     | avconv -y -r 30 -f image2pipe -vcodec ppm -i - -b 8196K pokerGitMovie.mp4
