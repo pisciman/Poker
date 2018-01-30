@@ -39,6 +39,14 @@ public class Giocatore {
         this.soldi = soldi;
     }
 
+    public Giocatore(String nomeGiocatore, char sesso, int età, int soldi) 
+    {
+        this.nomeGiocatore = nomeGiocatore;
+        this.sesso = sesso;
+        this.età = età;
+        this.soldi = soldi;
+    }
+
     // INSERIMENTO NOME GIOCATORE
     /**
      * Serve per settare il nome del giocatore
@@ -49,6 +57,10 @@ public class Giocatore {
         //Scanner scan = new Scanner(System.in);
         
         this.nomeGiocatore = nomeGiocatore;
+    }
+
+    public char getSesso() {
+        return sesso;
     }
     
     /**
@@ -98,16 +110,14 @@ public class Giocatore {
 
     /**
      * toString del Giocatore
-     * @return Nome, Fiches e ... (<code>String</code>)
+     * @return Nome, Soldi e ... (<code>String</code>)
      */
     @Override
     public String toString() {
-        //da mettere a posto nCarte
-        return "Giocatore{nick=" + nomeGiocatore + ", soldi=" + soldi + '}';
+        return "Giocatore{" + "nick: " + nomeGiocatore + ", sesso: " + sesso + ", anni: " + età + ", soldi: " + soldi + '}';
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
         //I parametri dell'oggetto giocatore sono per semplicità
