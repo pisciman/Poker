@@ -10,7 +10,7 @@ public class Poker {
         int età = 0;
         int soldi;
         // GRUPPO GIOCATORE
-        Giocatore gioca = new Giocatore();
+        Giocatore gioca = new Giocatore("Gianfranco", 'M', 18, 500);
         System.out.println("Inserisci il tuo nome");
         nome = input.nextLine();
         gioca.setNomeGiocatore(nome); // SETTO IL NOME
