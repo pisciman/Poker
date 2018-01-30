@@ -10,6 +10,7 @@ import static org.junit.Assert.*;
 /**
  * @author Torricelli Alessio
  * @author Sferruzza Matteo
+ * @author Cavalieri Melissa
  */
 public class GiocatoreTest {
 
@@ -34,4 +35,19 @@ public class GiocatoreTest {
 	g.setSoldi(500);
 	assertFalse(3000 == g.getSoldi());
     }
+    
+    
+    @Test
+    public void testGetNomeGiocatore() {
+        Giocatore g = new Giocatore("Giovanni", 'M', 23, 2500);
+	assertEquals("Giovanni", g.getNomeGiocatore());
+    }
+
+    @Test
+    public void testSetNomeGiocatore() {
+	Giocatore g = new Giocatore("", 'M', 19, 1000);
+	assertEquals("", g.getNomeGiocatore());
+	g.setNomeGiocatore("Giovanni");
+	assertEquals("Giovanni", g.getNomeGiocatore());
+}
 }

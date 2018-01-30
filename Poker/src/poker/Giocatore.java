@@ -136,4 +136,10 @@ public class Giocatore {
         System.out.print("Inserisci il tuo budget totale");
         g.setSoldi(input.nextInt());
     }
+
+    public String getNomeGiocatore() {
+        return nomeGiocatore;
+    }
+    
+    
 }
