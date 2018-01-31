@@ -50,6 +50,10 @@ public class Giocatore {
         
         this.nomeGiocatore = nomeGiocatore;
     }
+
+    public char getSesso() {
+        return sesso;
+    }
     
     /**
      * Serve per settare il sesso del giocatore
@@ -95,19 +99,21 @@ public class Giocatore {
     public int getSoldi() {
         return soldi;
     }
+    
+    public String getNomeGiocatore() {
+        return nomeGiocatore;
+    }
 
     /**
      * toString del Giocatore
-     * @return Nome, Fiches e ... (<code>String</code>)
+     * @return Nome, Soldi e ... (<code>String</code>)
      */
     @Override
     public String toString() {
-        //da mettere a posto nCarte
-        return "Giocatore{nick=" + nomeGiocatore + ", soldi=" + soldi + '}';
+        return "Giocatore{" + "nick: " + nomeGiocatore + ", sesso: " + sesso + ", anni: " + età + ", soldi: " + soldi + '}';
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
         //I parametri dell'oggetto giocatore sono per semplicità

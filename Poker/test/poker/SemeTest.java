@@ -79,5 +79,4 @@ public class SemeTest {
 
         System.setOut(save_out);
     }
-    
 }

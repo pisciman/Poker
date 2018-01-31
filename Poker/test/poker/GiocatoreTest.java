@@ -1,41 +1,59 @@
 package poker;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  * @author Torricelli Alessio
  * @author Sferruzza Matteo
+ * @author Cavalieri Melissa
+ * @author Pollarini Umberto 
  */
 public class GiocatoreTest {
 
-
-    public GiocatoreTest() {
+    //Pollarini
+    @Test
+    public void testToString() {
+        Giocatore g = new Giocatore("Gianfranco", 'M', 18, 500);
+        assertEquals("Giocatore{nick: Gianfranco, sesso: M, anni: 18, soldi: 500}", g.toString());
+    }
+    
+    @Test
+    //TODO: Questo test fallisce (btw questa cosa sul sesso mi pare inutile)
+    public void testSetSesso() {
+        Giocatore g = new Giocatore("Alessio", 'C', 19, 1000);
+        assertTrue('M' == g.getSesso());
+    }
+    
+    //Sferruzza
+    @Test
+    public void testSetEtà() {
+	Giocatore g = new Giocatore("Giorgia", 'F', 20, 2000);
+	assertTrue(20 == g.getEtà());
+	g.setEtà(16);
+	assertTrue(18 == g.getEtà());
+    }
+    
+    @Test
+    public void testSetSoldi() {
+	Giocatore g = new Giocatore("Federico", 'M', 28, 3000);
+	assertTrue(3000 == g.getSoldi());
+	g.setSoldi(500);
+	assertFalse(3000 == g.getSoldi());
+    }
+    
+    //Cavalieri
+    @Test
+    public void testGetNomeGiocatore() {
+        Giocatore g = new Giocatore("Giovanni", 'M', 23, 2500);
+	assertEquals("Giovanni", g.getNomeGiocatore());
     }
 
-    @BeforeClass
-    public static void setUpClass() {
+    @Test
+    public void testSetNomeGiocatore() {
+	Giocatore g = new Giocatore("", 'M', 19, 1000);
+	assertEquals("", g.getNomeGiocatore());
+	g.setNomeGiocatore("Giovanni");
+	assertEquals("Giovanni", g.getNomeGiocatore());
     }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * TODO: TEST CHE ABBIANO SENSO E NON SIANO DEFAULT
-     */
-
-
 }
