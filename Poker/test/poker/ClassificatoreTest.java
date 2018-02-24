@@ -60,5 +60,16 @@ public class ClassificatoreTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+    @Test
+        public void testCoppia() {
+        System.out.println("coppia");
+        ArrayList<Carta> l = new ArrayList<Carta>();
+        l.add(new Carta(Seme.CUORI,Valore.CINQUE));
+        l.add(new Carta(Seme.PICCHE,Valore.CINQUE));
+        PuntoMano expResult = PuntoMano.COPPIA;
+        PuntoMano result = Classificatore.classifica(l);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
     
 }
