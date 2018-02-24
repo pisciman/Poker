@@ -71,5 +71,20 @@ public class ClassificatoreTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+        
+     @Test
+        public void testNonCoppia() {
+        System.out.println("Non coppia");
+        ArrayList<Carta> l = new ArrayList<Carta>();
+        l.add(new Carta(Seme.CUORI,Valore.DUE));
+        l.add(new Carta(Seme.PICCHE,Valore.CINQUE));
+        PuntoMano expResult = PuntoMano.ALTA;
+        PuntoMano result = Classificatore.classifica(l);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+        
+    
+        
     
 }

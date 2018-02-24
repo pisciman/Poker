@@ -14,7 +14,12 @@ public class Classificatore {
             return PuntoMano.ALTA;
         }
         if(l.size() > 1){
+            if (l.get(0).getValore()!=l.get(1).getValore())
+                return PuntoMano.ALTA;
+            else
+            {
             return PuntoMano.COPPIA;
+            }
         }
 
         return PuntoMano.INDEFINITO;
