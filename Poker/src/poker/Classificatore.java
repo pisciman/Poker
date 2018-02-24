@@ -1,10 +1,17 @@
 package poker;
 
+import java.util.ArrayList;
+
 public class Classificatore {
 
-    public static PuntoMano classifica(ListaDiCarte l) {
+    public static PuntoMano classifica(ArrayList<Carta> l) {
 
-    return PuntoMano.INDEFINITO;
+    if(l==null)
+    {
+        return PuntoMano.INDEFINITO;
+    }
+    else
+        return PuntoMano.ALTA;
 
     }
 }
