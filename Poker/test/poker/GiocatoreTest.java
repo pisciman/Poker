@@ -19,7 +19,6 @@ public class GiocatoreTest {
     }
     
     @Test
-    //TODO: Questo test fallisce (btw questa cosa sul sesso mi pare inutile)
     public void testSetSesso() {
         Giocatore g = new Giocatore("Alessio", 'M', 19, 1000);
         assertTrue('M' == g.getSesso());
