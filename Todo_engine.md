@@ -1,4 +1,4 @@
-## Compiti per il gruppo GUI. 
+## Compiti per il gruppo ENGINE. 
 
 1. Costruire un motore funzionante di UNA MANO del poker completa. L'interfaccia dovrà essere testuale, e non dovrà preoccuparsi
    del problema di mostrare le carte o meno: tutti vedono tutto.
