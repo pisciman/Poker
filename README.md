@@ -21,15 +21,15 @@ Leggere le motivazioni, integrarle e produrre una nuova pull request (oppure sca
 - Cancellare la branch (localmente e su github)
 
 
-##Organizzazione Marzo-Aprile
-GUI 
+## Organizzazione Marzo-Aprile
+### GUI 
 *Epsilon
 *Delta
 
-ADMIN
+### ADMIN
 *Zeta
 *Alpha
 
-TUTORIAL(R1)
+### TUTORIAL(R1)
 *Gamma
 *Beta
