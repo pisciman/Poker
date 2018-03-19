@@ -22,14 +22,13 @@ Leggere le motivazioni, integrarle e produrre una nuova pull request (oppure sca
 
 
 ## Organizzazione Marzo-Aprile
-### GUI 
-*Epsilon
-*Delta
+### Interfaccia grafica (Branch 'gui') 
+- Epsilon
+- Delta
 
-### ADMIN
-*Zeta
-*Alpha
+### MOTORE DEL GIOCO (Branch 'engine')
+- Alpha
 
-### TUTORIAL(R1)
-*Gamma
-*Beta
+### TUTORIAL(Branch 'release1')
+-Gamma
+-Beta
