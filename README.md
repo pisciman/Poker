@@ -22,7 +22,9 @@ Leggere le motivazioni, integrarle e produrre una nuova pull request (oppure sca
 
 
 ## Organizzazione Marzo-Aprile
+
 ### Interfaccia grafica (Branch 'gui') 
+Upstream collector https://github.com/aaleeexx/Poker-EPSILON (branch gui)
 - Epsilon
 - Delta
 
