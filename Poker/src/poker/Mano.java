@@ -32,7 +32,7 @@ public class Mano {
         }
 
         /*
-        *   Stampa una mano di 5 carte 
+        *   Stampa una mano di 5 carte pero scoperte quindi devi mettere che non sono coperti
         */
          @Override
         public String toString() {
