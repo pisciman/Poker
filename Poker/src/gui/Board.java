@@ -37,5 +37,6 @@ public class Board extends JFrame
     
     public static void main(String[] args) {
         new Board("Poker", 1280, 720);
+        frameindex home=new frameindex();
     }
 }
