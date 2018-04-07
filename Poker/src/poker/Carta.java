@@ -43,9 +43,9 @@ public class Carta {
     */
     @Override
     public String toString() {
-        if (isCoperto())
-            return "***";
-        else
+      //  if (isCoperto())
+      //      return "***";
+     //   else
             if (this.valore.valore.equals("10"))
                 return getColore() + valore.toString() + seme.toString();
             else
