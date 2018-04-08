@@ -7,38 +7,44 @@ package poker;
 
 public class Mano {
 
-       private  Mazzo deck[] = new Mazzo[52];
-    //   private int Giocatori = 5;
        private int N_Carte = 5;
-       private Mazzo Mano[] = new Mazzo[5];
+       private Carta Mano[] = new Carta[N_Carte];
+       private Mazzo deck = new Mazzo();
 
+       
         /**
          * costruttore
-         */
-        public void Mano(){ 
-            genera_mano();
+        */
+        public void Mano(){  
+        //    genera_mano();
         }
         
         /**
-         * genera un array chiamato mano che contiene 5 carteff 
+         *  usa il metodo mescola() della classe Mazzo per mescolare la carta
+         *  e poi assegna all'array Mano i valori ottenuti con il metodo pesca() sempre della classe Mazzo
          */
-        public void genera_mano(){
+        public void genera_mano(){     
+            deck.mescola();
+                   
             for (int i = 0; i < N_Carte ; i++){
-
-             Mano[i] = deck[i];
+                Mano[i] = deck.pesca();
             } 
         }
 
-      @Override
-      public String toString() {
-        return "Mano{" + Mano + '}';
+        /*
+        *   Stampa una mano di 5 carte pero scoperte quindi devi mettere che non sono coperti
+        */
+         @Override
+        public String toString() {
+            return "Mano{" + Mano[0] + " , " + Mano[1] + " , "+ Mano[2] + " , "+ Mano[3] + " , "+ Mano[4] + '}';
         }
 
-    
-      public static void main (String args[]) {
-        Mano m = new Mano();
-        System.out.println(m);
+        public static void main (String args[]) {
+            Mano m = new Mano();
+            m.genera_mano();     
+            System.out.println(m);
+        } 
     }       
         
        
-    }
+ 

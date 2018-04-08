@@ -22,14 +22,18 @@ Leggere le motivazioni, integrarle e produrre una nuova pull request (oppure sca
 
 
 ## Organizzazione Marzo-Aprile
-### GUI 
-*Epsilon
-*Delta
 
-### ADMIN
-*Zeta
-*Alpha
+### Interfaccia grafica (Branch 'gui') 
+Upstream collector Alushi:  https://github.com/aaleeexx/Poker-EPSILON/tree/gui (branch gui)
+- Epsilon
+- Delta
 
-### TUTORIAL(R1)
-*Gamma
-*Beta
+### MOTORE DEL GIOCO (Branch 'engine')
+Upstream collector Rossi:
+- Alpha
+- Zeta 
+
+### TUTORIAL(Branch 'release1')
+Upstream collector Santosuosso: https://github.com/MrcSossy/Poker-BETA (branch release 1)
+-Gamma
+-Beta
