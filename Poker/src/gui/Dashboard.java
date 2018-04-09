@@ -25,7 +25,8 @@ class Dashboard extends JPanel
     // CONSTRUCTORS
     Dashboard(int width, int height, LayoutManager layout)
     {
-        super(layout);
+       
+        super(layout); System.out.println("ok");
         this.bg = new JLabel(new ImageIcon(getClass().getResource("/img/table.jpg")));
         add(this.bg);
         setPreferredSize(new Dimension(width, height));
