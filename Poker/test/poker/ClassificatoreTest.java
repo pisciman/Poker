@@ -98,6 +98,21 @@ public class ClassificatoreTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+  
+    @Test
+    public void testColore() {
+        System.out.println("Tris");
+        ArrayList<Carta> l = new ArrayList<Carta>();
+        l.add(new Carta(Seme.FIORI,Valore.CINQUE));
+        l.add(new Carta(Seme.FIORI,Valore.ASSO));
+        l.add(new Carta(Seme.FIORI,Valore.NOVE));
+        l.add(new Carta(Seme.FIORI,Valore.DUE));
+        l.add(new Carta(Seme.FIORI,Valore.SETTE));
+        PuntoMano expResult = PuntoMano.COLORE;
+        PuntoMano result = Classificatore.classifica(l);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
     
     @Test
     public void testPoker() {

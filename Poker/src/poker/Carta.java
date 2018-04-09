@@ -117,4 +117,8 @@ public class Carta {
         else
             return ANSI_BLACK;
     }
+    
+    public String getSimbolo(){
+        return seme.simbolo;
+    }
 }
