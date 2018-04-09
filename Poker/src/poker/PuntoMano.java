@@ -1,5 +1,5 @@
 package poker;
 
 public enum PuntoMano {
-    INDEFINITO, ALTA,  COPPIA, DOPPIA, TRIS, SCALA
+    INDEFINITO, ALTA,  COPPIA, DOPPIA, TRIS, SCALA, POKER
 }
