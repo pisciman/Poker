@@ -9,6 +9,7 @@ package gui;
 
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 /**
  *
@@ -36,7 +37,12 @@ public class Board extends JFrame
     }
     
     public static void main(String[] args) {
-        new Board("Poker", 1280, 720);
-        frameindex home=new frameindex();
+        
+        Frameindex home=new Frameindex();
+        while(home.i==0) {
+            System.out.println();
+            if(home.i==1){new Board("Poker", 1280, 720);}
+        }
+
     }
 }
