@@ -54,7 +54,7 @@ public class Mazzo {
     /**
      * Funzione che mescola la carta
      */
-    private void mescola() {
+    public void mescola() {
         Collections.shuffle(Arrays.asList(mazzo));
     }
 
@@ -65,9 +65,15 @@ public class Mazzo {
         icarte--;
         return mazzo[icarte];
     }
+    
+    public Carta[] getMazzo() {
+        return mazzo;
+    }
+    
 
     public static void main (String args[]) {
         Mazzo m = new Mazzo();
         System.out.println(m.toString());
     }
+
 }
