@@ -1,9 +1,15 @@
 package gui;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * @inphormatic, @simplayy, @Xxpromw3mtxX e altri
+ * Cose da fare (che potete dividervi tra i due gruppi:
+ * Generate il banco, con il nome del/dei giocatori. Generate le carte coperte.
+ *
+ * Premendo un qualche pulsante le carte si devono rivelare.
+ * PER LE CARTE POTETE USARE QUESTE IMMAGINI:
+ * https://github.com/hayeah/playing-cards-assets/tree/master/png
+ *
+ *
  */
 
 
