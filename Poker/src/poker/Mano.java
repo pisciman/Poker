@@ -18,6 +18,20 @@ public class Mano {
         public void Mano(){  
         //    genera_mano();
         }
+
+    /**
+     * Aggiungi alla mano le carte indicate (max 5)
+     * UTILE per la distribuzione, per comporre il punto con le carte sul banco ecc.
+     * @param c array di carte (può essere null)
+     */
+    public void aggiungi(Carta c[]){
+        throw new Error("Non implementato");
+        }
+
+
+
+
+
         
         /**
          *  usa il metodo mescola() della classe Mazzo per mescolare la carta
