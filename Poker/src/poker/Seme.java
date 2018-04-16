@@ -1,5 +1,7 @@
 package poker;
 
+import java.util.Random;
+
 /**
  * Si usa l'ordine dei semi italiano (che non è quello inglese)
  * @author piffy
@@ -12,6 +14,7 @@ public enum Seme {
     Seme(String s){
         simbolo=s;
     };
+
     
 /**
  * Resituisce il simbolo del seme. 
@@ -27,4 +30,11 @@ public enum Seme {
         for (Seme i:Seme.values())
             System.out.println(i.name() + ": " + i + " Ordinale: "+i.ordinal());
     }
+  /**
+     *
+     * @return Restituisce un seme casuale
+     */
+    public static Seme genera_Seme_Casuale() {
+        return Seme.values()[new Random().nextInt(Seme.values().length)];
+}
 }

@@ -5,6 +5,7 @@
  */
 package poker;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -15,14 +16,29 @@ public class Tutorial {
     Mano m;
 
     public Tutorial() {
-        m= new Mano();
+        this.genera();
     }
     
     void genera(){
         switch((int)(Math.random() * 5)){
             case 0:
                 //Carte random
+                
                 //m.setMano(Math.random() ..... );
+                Mano m = new Mano();
+                for (int i=0;i<5;i++){
+                    m.costruisci_mano_scoperta(
+                            Seme semi[] = 
+                            { 
+                                Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale(),Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale()
+                            }, 
+                            Valore valori[] = 
+                            {
+                                Valore.genera_Seme_Casuale(), Valore.genera_Seme_Casuale(), Valore.genera_Seme_Casuale(), Valore.genera_Seme_Casuale(), Valore.genera_Seme_Casuale()
+                            });
+                    
+                }
+                
                 break;
             case 1:
                 //Combinazione poker

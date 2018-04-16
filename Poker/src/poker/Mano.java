@@ -30,6 +30,18 @@ public class Mano {
                 Mano[i] = deck.pesca();
             } 
         }
+        
+    /**
+     *
+     * @param semi
+     * @param valori
+     */
+    public void costruisci_mano_scoperta(Seme semi[], Valore valori[]){
+            for (int i = 0; i < N_Carte ; i++){
+                Carta k = new Carta(semi[i],valori[i],false);
+                Mano[i] = k;
+            } 
+        }
 
         /*
         *   Stampa una mano di 5 carte pero scoperte quindi devi mettere che non sono coperti
