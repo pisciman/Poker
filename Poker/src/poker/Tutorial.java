@@ -5,7 +5,6 @@
  */
 package poker;
 
-import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -14,54 +13,73 @@ import java.util.Scanner;
  */
 public class Tutorial {
     Mano m;
-
+    static int vittorie_di_fila;
+    static String risposta;
     public Tutorial() {
         this.genera();
+        vittorie_di_fila = 0;
+        risposta = new String();
     }
-    
-    void genera(){
+    /*
+    * Genera casualmente una mano fra i seguenti tipi: Casuale, Poker, Full, Doppia Coppia, Scala Reale
+    */
+    final void genera(){
+        m = new Mano();
         switch((int)(Math.random() * 5)){
-            case 0:
-                //Carte random
-                
-                //m.setMano(Math.random() ..... );
-                Mano m = new Mano();
-                for (int i=0;i<5;i++){
-                    m.costruisci_mano_scoperta(
-                            Seme semi[] = 
-                            { 
-                                Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale(),Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale()
-                            }, 
-                            Valore valori[] = 
-                            {
-                                Valore.genera_Seme_Casuale(), Valore.genera_Seme_Casuale(), Valore.genera_Seme_Casuale(), Valore.genera_Seme_Casuale(), Valore.genera_Seme_Casuale()
-                            });
-                    
+           
+            case 0://Combinazione completamente casuale
+                for (m.puntatore = 0; m.puntatore<5; m.puntatore++){
+                  m.aggiungi_carta_random();
                 }
-                
                 break;
-            case 1:
-                //Combinazione poker
+            case 1://Combinazione poker
+                m.aggiungi_carta(Seme.FIORI, Valore.SEI);
+                m.aggiungi_carta(Seme.CUORI, Valore.SEI);
+                m.aggiungi_carta(Seme.FIORI, Valore.CINQUE);
+                m.aggiungi_carta(Seme.QUADRI, Valore.SEI);
+                m.aggiungi_carta(Seme.QUADRI, Valore.SEI);
                 break;
-            case 2:
-                //Combinazione full
+            case 2://Combinazione full
+                m.aggiungi_carta(Seme.CUORI, Valore.SEI);
+                m.aggiungi_carta(Seme.CUORI, Valore.SEI);
+                m.aggiungi_carta(Seme.FIORI, Valore.CINQUE);
+                m.aggiungi_carta(Seme.PICCHE, Valore.CINQUE);
+                m.aggiungi_carta(Seme.QUADRI, Valore.SEI);
                 break;
-            case 3:
-                //Combinazione doppia coppia
+            case 3://Combinazione doppia coppia
+                m.aggiungi_carta(Seme.CUORI, Valore.SEI);
+                m.aggiungi_carta(Seme.CUORI, Valore.SEI);
+                m.aggiungi_carta(Seme.FIORI, Valore.CINQUE);
+                m.aggiungi_carta(Seme.PICCHE, Valore.CINQUE);
+                m.aggiungi_carta(Seme.PICCHE, Valore.ASSO);
                 break;
-            case 4:
-                //Combinazione scala reale
+            case 4://Combinazione scala reale
+                m.aggiungi_carta(Seme.PICCHE, Valore.ASSO);
+                m.aggiungi_carta(Seme.PICCHE, Valore.RE);
+                m.aggiungi_carta(Seme.PICCHE, Valore.DONNA);
+                m.aggiungi_carta(Seme.PICCHE, Valore.JACK);
+                m.aggiungi_carta(Seme.PICCHE, Valore.DIECI);
                 break;
         }
     }
     public static void main(String[] args) {
+        
         Scanner sc = new Scanner(System.in);
         Tutorial t = new Tutorial();
         System.out.print("Benvenuto nel Poker della 4^B\n--_-_-_____----__-____---\n");
-        t.genera();
-        System.out.println("Indovina la mano appena generata:");
-        //Compare mani
-        System.out.println(t);
+        while(vittorie_di_fila!=5){
+            t.genera();
+            System.out.println("Indovina il punto della mano appena generata:");
+            System.out.println(t);
+            risposta = sc.nextLine();
+            if(risposta.equalsIgnoreCase(
+                    risposta   //Qui serve il metodo classificatore
+            ))
+                vittorie_di_fila++;
+            else
+                vittorie_di_fila=0;
+        }
+        System.out.println("\n\n -- Finalmente ci capiamo. --\n");
     }
     
 }

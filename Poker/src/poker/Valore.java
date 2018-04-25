@@ -42,7 +42,7 @@ public enum Valore {
      * 
      * @return Restituisce un valore casuale 
      */
-    public static Valore genera_Seme_Casuale() {
+    public static Valore genera_Valore_Casuale() {
         return Valore.values()[new Random().nextInt(Valore.values().length)];
 }
 }

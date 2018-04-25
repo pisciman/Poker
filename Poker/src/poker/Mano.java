@@ -1,7 +1,7 @@
 package poker;
 
 /**
- *
+ * @author sfemat aggiungi_carta & aggiungi_carta_random & puntatore
  * @author jerome
  */
 
@@ -10,7 +10,7 @@ public class Mano {
        private int N_Carte = 5;
        private Carta Mano[] = new Carta[N_Carte];
        private Mazzo deck = new Mazzo();
-
+       public int puntatore; //Puntatore alla carta attualmente utilizzata, utilizzabile da altre classi
        
         /**
          * costruttore
@@ -32,15 +32,22 @@ public class Mano {
         }
         
     /**
-     *
-     * @param semi
-     * @param valori
+     * Aggiungi carta (scoperta) generata casualmente alla mano
      */
-    public void costruisci_mano_scoperta(Seme semi[], Valore valori[]){
-            for (int i = 0; i < N_Carte ; i++){
-                Carta k = new Carta(semi[i],valori[i],false);
-                Mano[i] = k;
-            } 
+        public void aggiungi_carta_random(){
+            
+            Carta k = new Carta(Seme.genera_Seme_Casuale(),Valore.genera_Valore_Casuale(),false);
+            Mano[puntatore] = k;
+             
+        }
+        /**
+         * Aggiungi carta (scoperta) alla mano
+        * @param m Seme della carta
+        * @param v Valore della carta
+         */
+        public void aggiungi_carta(Seme m, Valore v){
+            Carta k = new Carta(m,v,false);
+            Mano[puntatore] = k;
         }
 
         /*
