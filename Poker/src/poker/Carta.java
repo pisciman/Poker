@@ -18,7 +18,12 @@ public class Carta {
     final private Valore valore;
     /**Definisce lo stato (coperto(true) o scoperto(false) della carta)*/
     private boolean coperto;
-     
+
+    public Carta(Carta c2) {
+        this.seme = c2.seme;
+        this.valore = c2.valore;
+    }
+    
     public Carta(Seme seme, Valore valore, boolean coperto) {
         this.seme = seme;
         this.valore = valore;

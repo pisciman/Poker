@@ -40,8 +40,8 @@ public class ManoTest {
 
 
 
-    @Test
+/*    @Test
     public void TestToString( ) throws Exception {
     }
-
+*/
 }
