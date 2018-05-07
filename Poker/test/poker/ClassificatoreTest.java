@@ -101,7 +101,7 @@ public class ClassificatoreTest {
   
     @Test
     public void testColore() {
-        System.out.println("Tris");
+        System.out.println("Colore");
         ArrayList<Carta> l = new ArrayList<Carta>();
         l.add(new Carta(Seme.FIORI,Valore.CINQUE));
         l.add(new Carta(Seme.FIORI,Valore.ASSO));
@@ -129,7 +129,7 @@ public class ClassificatoreTest {
         // TODO review the generated test code and remove the default call to fail.
     }
 
-  /*  @Test
+    @Test
     public void testScala() {
         System.out.println("Scala");
         ArrayList<Carta> l = new ArrayList<Carta>();
@@ -142,7 +142,22 @@ public class ClassificatoreTest {
         PuntoMano result = Classificatore.classifica(l);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-    }*/
+    }
+    
+        @Test
+    public void testScalaReale() {
+        System.out.println("Scala Reale");
+        ArrayList<Carta> l = new ArrayList<Carta>();
+        l.add(new Carta(Seme.FIORI,Valore.TRE));
+        l.add(new Carta(Seme.FIORI,Valore.ASSO));
+        l.add(new Carta(Seme.FIORI,Valore.QUATTRO));
+        l.add(new Carta(Seme.FIORI,Valore.DUE));
+        l.add(new Carta(Seme.FIORI,Valore.CINQUE));
+        PuntoMano expResult = PuntoMano.SCALAREALE;
+        PuntoMano result = Classificatore.classifica(l);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
         
     
 }
