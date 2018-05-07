@@ -12,6 +12,9 @@ import java.util.Scanner;
  * @author Matteo
  */
 public class Tutorial {
+    //TODO: Fare test su vittorie di fila. 
+    //TODO: Fare test simulare l'input dell'utente, magari input ERRATO
+    
     Mano m;
     static int vittorie_di_fila;
     static String risposta;
@@ -23,6 +26,11 @@ public class Tutorial {
     /*
     * Genera casualmente una mano fra i seguenti tipi: Casuale, Poker, Full, Doppia Coppia, Scala Reale
     */
+    //TODO: SPOSTARE IL RANDOM NEL MAIN. 
+    //TODO: VARIARE UN PO' LE POSSIBILI MANI (Magari il seme)perche
+      //il giocatore poi si annoia
+    
+    
     final void genera(){
         m = new Mano();
         switch((int)(Math.random() * 5)){
@@ -63,6 +71,8 @@ public class Tutorial {
         }
     }
     public static void main(String[] args) {
+        //TODO Strutturatelo in funzioni che poi possono essere testate
+        //Singolarmente
         
         Scanner sc = new Scanner(System.in);
         Tutorial t = new Tutorial();
