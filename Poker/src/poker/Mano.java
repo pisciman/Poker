@@ -6,11 +6,16 @@ package poker;
  */
 
 public class Mano {
-
+      //TODO: TOGLIERE ASSOLUTAMENTE MAZZO
+      //TODO: Forse -> Listaarray
+      
        private int N_Carte = 5;
        private Carta Mano[] = new Carta[N_Carte];
        private Mazzo deck = new Mazzo();
        public int puntatore; //Puntatore alla carta attualmente utilizzata, utilizzabile da altre classi
+       //TODO: puntatore dovrebbe essere responsabilità di mazzo. 
+       //TODO: FORSE PUO' Aver senso fare la sottoclasse ManoNonCasuale 
+       // e mettere qui la generazione della mano per il tutorial
        
         /**
          * costruttore
@@ -53,6 +58,8 @@ public class Mano {
         /*
         *   Stampa una mano di 5 carte pero scoperte quindi devi mettere che non sono coperti
         */
+        //TODO ERRORE!! NON E' DETTO CHE LA MANO SIA DI 5 CARTE!!!
+        // LA MANO "deve sapere" di quante carte è formata. 
          @Override
         public String toString() {
             return "Mano{" + Mano[0] + " , " + Mano[1] + " , "+ Mano[2] + " , "+ Mano[3] + " , "+ Mano[4] + '}';
