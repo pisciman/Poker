@@ -19,54 +19,57 @@ public class Tutorial {
     static int vittorie_di_fila;
     static String risposta;
     public Tutorial() {
-        this.genera();
+        this.genera((Math.random() * 5));
         vittorie_di_fila = 0;
         risposta = new String();
     }
     /*
     * Genera casualmente una mano fra i seguenti tipi: Casuale, Poker, Full, Doppia Coppia, Scala Reale
     */
-    //TODO: SPOSTARE IL RANDOM NEL MAIN. 
-    //TODO: VARIARE UN PO' LE POSSIBILI MANI (Magari il seme)perche
+    //TODO: SPOSTARE IL RANDOM NEL MAIN. <FATTO>
+    //TODO: VARIARE UN PO' LE POSSIBILI MANI (Magari il seme)perche <FATTO>
       //il giocatore poi si annoia
     
     
-    final void genera(){
+    final void genera(double random){
         m = new Mano();
-        switch((int)(Math.random() * 5)){
+        Valore valoreCasuale []={Valore.genera_Valore_Casuale(),Valore.genera_Valore_Casuale(),Valore.genera_Valore_Casuale(),Valore.genera_Valore_Casuale(),Valore.genera_Valore_Casuale()};
+        Seme semeCasuale []={ Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale()};
+        
+        switch((int)random){
            
             case 0://Combinazione completamente casuale
                 for (m.puntatore = 0; m.puntatore<5; m.puntatore++){
                   m.aggiungi_carta_random();
                 }
                 break;
-            case 1://Combinazione poker
-                m.aggiungi_carta(Seme.FIORI, Valore.SEI);
-                m.aggiungi_carta(Seme.CUORI, Valore.SEI);
-                m.aggiungi_carta(Seme.FIORI, Valore.CINQUE);
-                m.aggiungi_carta(Seme.QUADRI, Valore.SEI);
-                m.aggiungi_carta(Seme.QUADRI, Valore.SEI);
+            case 1://Combinazione poker: 4 valori uguali
+                m.aggiungi_carta(semeCasuale[0], valoreCasuale[0]);
+                m.aggiungi_carta(semeCasuale[1], valoreCasuale[0]);
+                m.aggiungi_carta(semeCasuale[2], valoreCasuale[1]);
+                m.aggiungi_carta(semeCasuale[3], valoreCasuale[0]);
+                m.aggiungi_carta(semeCasuale[4], valoreCasuale[0]);
                 break;
-            case 2://Combinazione full
-                m.aggiungi_carta(Seme.CUORI, Valore.SEI);
-                m.aggiungi_carta(Seme.CUORI, Valore.SEI);
-                m.aggiungi_carta(Seme.FIORI, Valore.CINQUE);
-                m.aggiungi_carta(Seme.PICCHE, Valore.CINQUE);
-                m.aggiungi_carta(Seme.QUADRI, Valore.SEI);
+            case 2://Combinazione full: tris di valori + coppia di valori
+                m.aggiungi_carta(semeCasuale[0], valoreCasuale[0]);
+                m.aggiungi_carta(semeCasuale[1], valoreCasuale[0]);
+                m.aggiungi_carta(semeCasuale[2], valoreCasuale[0]);
+                m.aggiungi_carta(semeCasuale[3], valoreCasuale[1]);
+                m.aggiungi_carta(semeCasuale[4], valoreCasuale[1]);
                 break;
-            case 3://Combinazione doppia coppia
-                m.aggiungi_carta(Seme.CUORI, Valore.SEI);
-                m.aggiungi_carta(Seme.CUORI, Valore.SEI);
-                m.aggiungi_carta(Seme.FIORI, Valore.CINQUE);
-                m.aggiungi_carta(Seme.PICCHE, Valore.CINQUE);
-                m.aggiungi_carta(Seme.PICCHE, Valore.ASSO);
+            case 3://Combinazione doppia coppia: due coppie di valori uguali, seme casuale
+                m.aggiungi_carta(semeCasuale[0], valoreCasuale[0]);
+                m.aggiungi_carta(semeCasuale[1], valoreCasuale[0]);
+                m.aggiungi_carta(semeCasuale[2], valoreCasuale[2]);
+                m.aggiungi_carta(semeCasuale[3], valoreCasuale[1]);
+                m.aggiungi_carta(semeCasuale[4], valoreCasuale[1]);
                 break;
-            case 4://Combinazione scala reale
-                m.aggiungi_carta(Seme.PICCHE, Valore.ASSO);
-                m.aggiungi_carta(Seme.PICCHE, Valore.RE);
-                m.aggiungi_carta(Seme.PICCHE, Valore.DONNA);
-                m.aggiungi_carta(Seme.PICCHE, Valore.JACK);
-                m.aggiungi_carta(Seme.PICCHE, Valore.DIECI);
+            case 4://Combinazione scala reale: seme uguale, valori predefiniti
+                m.aggiungi_carta(semeCasuale[0], Valore.ASSO);
+                m.aggiungi_carta(semeCasuale[0], Valore.RE);
+                m.aggiungi_carta(semeCasuale[0], Valore.DONNA);
+                m.aggiungi_carta(semeCasuale[0], Valore.JACK);
+                m.aggiungi_carta(semeCasuale[0], Valore.DIECI);
                 break;
         }
     }
@@ -78,7 +81,7 @@ public class Tutorial {
         Tutorial t = new Tutorial();
         System.out.print("Benvenuto nel Poker della 4^B\n--_-_-_____----__-____---\n");
         while(vittorie_di_fila!=5){
-            t.genera();
+            t.genera((Math.random() * 5));
             System.out.println("Indovina il punto della mano appena generata:");
             System.out.println(t);
             risposta = sc.nextLine();
