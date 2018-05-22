@@ -1,5 +1,7 @@
 package poker;
 
+import java.util.Random;
+
 /**
 * Contiene tutti i valori delle carte.
 *
@@ -36,4 +38,11 @@ public enum Valore {
     public int getValore() {
         return (this.ordinal() + 1);
     }
+    /**
+     * 
+     * @return Restituisce un valore casuale 
+     */
+    public static Valore genera_Valore_Casuale() {
+        return Valore.values()[new Random().nextInt(Valore.values().length)];
+}
 }
