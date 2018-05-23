@@ -21,27 +21,32 @@ public class ManoTest {
     @Test
     public void testConfrontaMano( ) throws Exception {
         Mano m = new Mano();
-        Carta c[]=new Carta[2];
-        c[0]=new Carta(Seme.CUORI,Valore.CINQUE);
-        c[1]=new Carta(Seme.PICCHE,Valore.QUATTRO);
-        m.aggiungi(c);
         Mano m1 = new Mano();
-        Carta c1[]=new Carta[2];
-        c1[0]=new Carta(Seme.FIORI,Valore.CINQUE);
-        c1[1]=new Carta(Seme.QUADRI,Valore.CINQUE);
-        m1.aggiungi(c1);
-        assertEquals(true,m.compareTo(m)==0);
-        assertEquals(true,m.compareTo(m1)<0);
-        //NOTARE CHE NON BASTA USARE Classificatore perché in caso di parità conta
-        //Il valore delle carte (es: due tris vince il più alto)
+        // Generare mani
+        assertEquals(0,m.compareTo(m)); //UNICO caso in cui deve restituire 0
+        fail("TODO: Testare Due carte più alte");
+        fail("TODO: Testare Due Poker");
+        fail("TODO: Testare Due full");
 
 
     }
-
-
 
     @Test
-    public void TestToString( ) throws Exception {
+    public void testConfrontaPunto( ) throws Exception {
+        Mano m = new Mano();
+        Mano m1 = new Mano();
+        // Generare mani
+        //assertEquals(true,m.comparePunto(m)==1);
+        fail("TODO: Testare Tris e Scala");
+        fail("TODO: Testare Poker e Colore");
+        fail("TODO: Testare Carta più alta e coppia");
     }
 
+
+
+
+/*    @Test
+    public void TestToString( ) throws Exception {
+    }
+*/
 }
