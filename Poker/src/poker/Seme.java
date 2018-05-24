@@ -34,7 +34,7 @@ public enum Seme {
      *
      * @return Restituisce un seme casuale
      */
-    public static Seme genera_Seme_Casuale() {
+    public static Seme generaSemeCasuale() {
         return Seme.values()[new Random().nextInt(Seme.values().length)];
 }
 }

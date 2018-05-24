@@ -15,13 +15,14 @@ public class Tutorial {
     //TODO: Fare test su vittorie di fila. 
     //TODO: Fare test simulare l'input dell'utente, magari input ERRATO
     
-    Mano m;
-    static int vittorie_di_fila;
+    Mano m=null;
+    static int vittorie_di_fila=0;
     static String risposta;
     public Tutorial() {
         this.genera((Math.random() * 5));
         vittorie_di_fila = 0;
-        risposta = new String();
+        //Refactor: Avoid instantiating String objects; this is usually unnecessary.
+        //risposta = new String();
     }
     /*
     
@@ -37,43 +38,45 @@ public class Tutorial {
     final void genera(double random){
         m = new Mano();
         Valore valoreCasuale []={Valore.genera_Valore_Casuale(),Valore.genera_Valore_Casuale(),Valore.genera_Valore_Casuale(),Valore.genera_Valore_Casuale(),Valore.genera_Valore_Casuale()};
-        Seme semeCasuale []={ Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale(), Seme.genera_Seme_Casuale()};
+        Seme semeCasuale []={ Seme.generaSemeCasuale(), Seme.generaSemeCasuale(), Seme.generaSemeCasuale(), Seme.generaSemeCasuale(), Seme.generaSemeCasuale()};
         
         switch((int)random){
            
             case 0://Combinazione completamente casuale
                 for (m.puntatore = 0; m.puntatore<5; m.puntatore++){
-                  m.aggiungi_carta_random();
+                  m.aggiungiCartaRandom();
                 }
                 break;
             case 1://Combinazione poker: 4 valori uguali
-                m.aggiungi_carta(semeCasuale[0], valoreCasuale[0]);
-                m.aggiungi_carta(semeCasuale[1], valoreCasuale[0]);
-                m.aggiungi_carta(semeCasuale[2], valoreCasuale[1]);
-                m.aggiungi_carta(semeCasuale[3], valoreCasuale[0]);
-                m.aggiungi_carta(semeCasuale[4], valoreCasuale[0]);
+                m.aggiungiCarta(semeCasuale[0], valoreCasuale[0]);
+                m.aggiungiCarta(semeCasuale[1], valoreCasuale[0]);
+                m.aggiungiCarta(semeCasuale[2], valoreCasuale[1]);
+                m.aggiungiCarta(semeCasuale[3], valoreCasuale[0]);
+                m.aggiungiCarta(semeCasuale[4], valoreCasuale[0]);
                 break;
             case 2://Combinazione full: tris di valori + coppia di valori
-                m.aggiungi_carta(semeCasuale[0], valoreCasuale[0]);
-                m.aggiungi_carta(semeCasuale[1], valoreCasuale[0]);
-                m.aggiungi_carta(semeCasuale[2], valoreCasuale[0]);
-                m.aggiungi_carta(semeCasuale[3], valoreCasuale[1]);
-                m.aggiungi_carta(semeCasuale[4], valoreCasuale[1]);
+                m.aggiungiCarta(semeCasuale[0], valoreCasuale[0]);
+                m.aggiungiCarta(semeCasuale[1], valoreCasuale[0]);
+                m.aggiungiCarta(semeCasuale[2], valoreCasuale[0]);
+                m.aggiungiCarta(semeCasuale[3], valoreCasuale[1]);
+                m.aggiungiCarta(semeCasuale[4], valoreCasuale[1]);
                 break;
             case 3://Combinazione doppia coppia: due coppie di valori uguali, seme casuale
-                m.aggiungi_carta(semeCasuale[0], valoreCasuale[0]);
-                m.aggiungi_carta(semeCasuale[1], valoreCasuale[0]);
-                m.aggiungi_carta(semeCasuale[2], valoreCasuale[2]);
-                m.aggiungi_carta(semeCasuale[3], valoreCasuale[1]);
-                m.aggiungi_carta(semeCasuale[4], valoreCasuale[1]);
+                m.aggiungiCarta(semeCasuale[0], valoreCasuale[0]);
+                m.aggiungiCarta(semeCasuale[1], valoreCasuale[0]);
+                m.aggiungiCarta(semeCasuale[2], valoreCasuale[2]);
+                m.aggiungiCarta(semeCasuale[3], valoreCasuale[1]);
+                m.aggiungiCarta(semeCasuale[4], valoreCasuale[1]);
                 break;
             case 4://Combinazione scala reale: seme uguale, valori predefiniti
-                m.aggiungi_carta(semeCasuale[0], Valore.ASSO);
-                m.aggiungi_carta(semeCasuale[0], Valore.RE);
-                m.aggiungi_carta(semeCasuale[0], Valore.DONNA);
-                m.aggiungi_carta(semeCasuale[0], Valore.JACK);
-                m.aggiungi_carta(semeCasuale[0], Valore.DIECI);
+                m.aggiungiCarta(semeCasuale[0], Valore.ASSO);
+                m.aggiungiCarta(semeCasuale[0], Valore.RE);
+                m.aggiungiCarta(semeCasuale[0], Valore.DONNA);
+                m.aggiungiCarta(semeCasuale[0], Valore.JACK);
+                m.aggiungiCarta(semeCasuale[0], Valore.DIECI);
                 break;
+            default: //Refactor: Switch statements should have a default label
+                System.out.println("Errore!\n");
         }
     }
     public static void main(String[] args) {

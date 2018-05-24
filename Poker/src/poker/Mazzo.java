@@ -18,21 +18,15 @@ public class Mazzo {
     private Carta mazzo[] = new Carta[MAX];
     private int icarte = MAX;
 
-    /**
-     * Costruttore del Mazzo
-     */
-    public Mazzo() {
-        genera();
-        mescola();
-    }
     
     /**
      * Genera in modo ordinato il mazzo di 52 carte da poker coperte
      */
-    public void genera() {
+    public Mazzo() {
+        int i=0;
         for (Seme seme : Seme.values())
         for (Valore valore: Valore.values())
-        mazzo[valore.ordinal() + (13 * seme.ordinal())] = new Carta(seme, valore, true);
+        mazzo[i++] = new Carta(seme, valore, false);
     }
 
     /**
@@ -62,8 +56,11 @@ public class Mazzo {
      * Pesca una carta
      */
     public Carta pesca(){
-        icarte--;
-        return mazzo[icarte];
+        if (icarte >0) {
+            return mazzo[--icarte];
+        }
+        else
+            return null;
     }
     
     public Carta[] getMazzo() {

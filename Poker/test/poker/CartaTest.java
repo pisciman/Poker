@@ -61,4 +61,17 @@ public class CartaTest {
         Carta c8 = new Carta(Seme.FIORI, Valore.ASSO, false);
         assertTrue(c7.compareTo(c8) == 0);
     }
+
+    @Test
+    public void testEquals() {
+        Carta c = new Carta(Seme.CUORI, Valore.ASSO, false);
+        assertTrue(c.equals(c));
+
+        Carta c1 = new Carta(Seme.CUORI, Valore.ASSO, false);
+        assertTrue(c.equals(c1));
+
+        Carta c2 = new Carta(Seme.CUORI, Valore.TRE, false);
+
+        assertFalse(c.equals(c2));
+    }
 }

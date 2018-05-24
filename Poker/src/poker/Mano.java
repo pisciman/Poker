@@ -1,15 +1,15 @@
 package poker;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
- * @author sfemat aggiungi_carta & aggiungi_carta_random & puntatore
+ * @author sfemat aggiungiCarta & aggiungiCartaRandom & puntatore
  * @author jerome
  */
 
 public class Mano implements Comparable{
 
-public class Mano {
       //TODO: TOGLIERE ASSOLUTAMENTE MAZZO <Fatto>
       //TODO: Forse -> Listaarray <Fatto>
 
@@ -24,7 +24,7 @@ public class Mano {
          * costruttore
         */
         public void Mano(){  
-        //    genera_mano();
+        //    generaMano();
         }
 
     /**
@@ -34,15 +34,17 @@ public class Mano {
      */
     public void aggiungi(Carta c[]){
         for (int i = 0; i < c.length; i++) {
-            mano[i] = c[i];
+            Carte.add(c[i]);
         }
     }
 
         /**
          *  usa il metodo mescola() della classe Mazzo per mescolare la carta
          *  e poi assegna all'array Mano i valori ottenuti con il metodo pesca() sempre della classe Mazzo
+         *  REFACTOR: Method names should not contain underscores
          */
-        public void genera_mano(){     
+        public void generaMano(){
+            Mazzo deck= new Mazzo();
             deck.mescola();
                    
             for (int i = 0; i < N_Carte ; i++){
@@ -52,10 +54,11 @@ public class Mano {
 
     /**
      * Aggiungi carta (scoperta) generata casualmente alla mano
+     * REFACTOR: Method names should not contain underscores
      */
-        public void aggiungi_carta_random(){
+        public void aggiungiCartaRandom(){
 
-            Carta k = new Carta(Seme.genera_Seme_Casuale(),Valore.genera_Valore_Casuale(),false);
+            Carta k = new Carta(Seme.generaSemeCasuale(),Valore.genera_Valore_Casuale(),false);
             Carte.set(puntatore, k);
 
         }
@@ -64,32 +67,18 @@ public class Mano {
         * @param m Seme della carta
         * @param v Valore della carta
          */
-        public void aggiungi_carta(Seme m, Valore v){
+        public void aggiungiCarta(Seme m, Valore v){
             Carta k = new Carta(m,v,false);
             Carte.set(puntatore, k);
         }
-
-        public void sort() {
-            for (int i = 0; i < mano.length; i++) {
-                for (int j = i; j < mano.length; j++) {
-                    if (this.mano[j].compareTo(this.mano[j+1]) == 1) {
-                        Carta temp = mano[j];  //Corretto uno strano errore qui:
-                        mano[j] = mano[j+1];
-                        mano[j+1] = temp;
-                    }
-                }
-            }
-        }
-
         /*
         *   Stampa una mano di 5 carte pero scoperte quindi devi mettere che non sono coperti
         */
-        //TODO ERRORE!! NON E' DETTO CHE LA MANO SIA DI 5 CARTE!!! LA MANO "deve sapere" di quante carte è formata.  <Fatto>
          @Override
         public String toString() {
             String tos = "Mano: ";
             for(int i = 0;i<this.N_Carte;i++){
-                tos+=Carte.get(i);
+                tos+=Carte.get(i)+" ";
             }
             return tos;
         }
@@ -101,16 +90,12 @@ public class Mano {
         */
         @Override
         public int compareTo(Object o) {
+            //TODO QUESTA FUNZIONE NON FUNZIONA!!!
             Mano m= (Mano) o;
-            this.sort();
-            m.sort();
+            Collections.sort(this.Carte);//era this.sort();
+            Collections.sort(m.Carte); // era m.sort();
 
-            for (int i = 0; i < mano.length; i++) {
-                if (this.mano[i].equals(m.mano[i]))
-                    return 0;
-            }
-
-            return -1;
+            return 0;
         }
 
 
@@ -122,7 +107,7 @@ public class Mano {
         */
         public static void main (String args[]) {
             Mano m = new Mano();
-            m.genera_mano();     
+            m.generaMano();
             System.out.println(m);
         }
 

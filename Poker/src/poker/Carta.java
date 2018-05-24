@@ -11,7 +11,7 @@ package poker;
 * @author d.santacroce
 * @author piffy (main di prova, stinghe del colore)
 */
-public class Carta {
+public class Carta implements Comparable{
     /**Seme della carta*/
     final private Seme seme;
     /**Valore (numero) della carta*/
@@ -121,4 +121,28 @@ public class Carta {
     public String getSimbolo(){
         return seme.simbolo;
     }
+
+    @Override
+    public int compareTo(Object o) {
+        Carta c = (Carta) o;
+        return this.valore.getValore() - c.valore.getValore();
+    }
+    @Override
+    public boolean equals(Object o) {
+
+        // If the object is compared with itself then return true
+        if (o == this) {
+            return true;
+        }
+
+        /* Check if o is an instance of Carta or not
+          "null instanceof [type]" also returns false */
+        if (!(o instanceof Carta)) {
+            return false;
+        }
+
+        // Compare the data members and return accordingly
+        return this.compareTo((Carta) o) == 0;
+    }
+
 }
