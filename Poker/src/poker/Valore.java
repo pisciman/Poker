@@ -1,6 +1,7 @@
 package poker;
 
 import java.util.Random;
+import static poker.Seme.FIORI;
 
 /**
 * Contiene tutti i valori delle carte.
@@ -38,6 +39,18 @@ public enum Valore {
     public int getValore() {
         return (this.ordinal() + 1);
     }
+    
+     public String getEnglishLetter() {
+        if (valore.toString().equals("A")) return "A";
+         if (valore.toString().equals("J")) return "J";
+          if (valore.toString().equals("Q")) return "Q";
+           if (valore.toString().equals("K")) return "K";
+            if (valore.toString().equals("10")) return "10";
+        return valore.toString();
+    }
+    
+    
+    
     /**
      * 
      * @return Restituisce un valore casuale 

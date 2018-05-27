@@ -1,5 +1,6 @@
 package elements;
 
+import gui.GMazzo;
 import java.util.Arrays;
 
 /**
@@ -8,14 +9,14 @@ import java.util.Arrays;
 public class Hand
 {
     // ATTRIBUTES
-    private Deck deck[];
-    private Deck mano[];
+    private GMazzo deck[];
+    private GMazzo mano[];
     
     // CONSTRUCTORS
     public Hand()
     {
-        this.deck = new Deck[52];
-        this.mano = new Deck[2];
+        this.deck = new GMazzo[52];
+        this.mano = new GMazzo[2];
         
         generateHand();
     }

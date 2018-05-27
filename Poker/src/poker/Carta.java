@@ -34,7 +34,12 @@ public class Carta implements Comparable{
     public int getValore() {
         return valore.getValore();
     }
+
+    public void rivela() {
+        this.coperto = false;
+    }
     
+   
     /**
     * Rappresentazione della carta.
     * 

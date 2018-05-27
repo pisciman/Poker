@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-import elements.Deck;
+import gui.GMazzo;
 import elements.Player;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -32,7 +32,7 @@ class Dashboard extends JPanel
 {
     // ATTRIBUTES
     Player p1;
-    final Deck deck;
+    final GMazzo deck;
     final BufferedImage table;
     JLabel punti;
     // CONSTRUCTORS
@@ -40,7 +40,7 @@ class Dashboard extends JPanel
     {
         super(layout);
         this.p1=p1;
-        this.deck = new Deck();
+        this.deck = new GMazzo();
         this.table = loadImage("imgs/iface/bg.jpg");
         build();   
     }

@@ -30,6 +30,15 @@ public enum Seme {
         for (Seme i:Seme.values())
             System.out.println(i.name() + ": " + i + " Ordinale: "+i.ordinal());
     }
+    
+        // METHODS
+    public char getEnglishLetter() {
+        if (simbolo.equals(FIORI)) return 'C';
+         if (simbolo.equals(QUADRI)) return 'D';
+          if (simbolo.equals(CUORI)) return 'H';
+           return 'S';
+    }
+    
   /**
      *
      * @return Restituisce un seme casuale
