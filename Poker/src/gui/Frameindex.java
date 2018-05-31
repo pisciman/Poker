@@ -31,8 +31,8 @@ public class Frameindex extends JFrame{
 //    JLabel background=new JLabel(new ImageIcon((getClass().getResource("/img/sfondo.jpg"))));
     public Frameindex(){ 
         
-        this.sfondo = new JLabel(new ImageIcon(getClass().getResource("/img/sfondo.jpg")));
-        b = new JButton(new ImageIcon(((new ImageIcon((getClass().getResource("/img/start.png")))).getImage()).getScaledInstance(100, 50, java.awt.Image.SCALE_DEFAULT))); 
+        this.sfondo = new JLabel(new ImageIcon(getClass().getResource("/imgs/sfondo.jpg")));
+        b = new JButton(new ImageIcon(((new ImageIcon((getClass().getResource("/imgs/start.png")))).getImage()).getScaledInstance(100, 50, java.awt.Image.SCALE_DEFAULT))); 
        // b=new JButton("Start game");
        // add(background);
        //background.setLayout(new FlowLayout());
@@ -55,18 +55,21 @@ public class Frameindex extends JFrame{
         b.setBounds(100,100,100, 40);
         
         maschio.addActionListener(new ActionListener(){
+            @Override
             public void actionPerformed(ActionEvent evt) {
                 sessom();
             }
         }); 
         
         maschio.addActionListener(new ActionListener(){
+            @Override
             public void actionPerformed(ActionEvent evt) {
                 sessof();
             }
         }); 
         
         b.addActionListener(new ActionListener(){
+            @Override
             public void actionPerformed(ActionEvent evt) {
                 takeActionPerformed();
             }

@@ -7,8 +7,7 @@ import java.util.Collections;
 import javax.imageio.ImageIO;
 import poker.Seme;
 import poker.Valore;
-import values.CardSeed;
-import values.CardValues;
+
 
 /**
  * @author j.manalo
