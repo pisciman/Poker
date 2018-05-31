@@ -6,7 +6,8 @@
 package gui;
 
 import com.sun.org.apache.xerces.internal.util.XML11Char;
-import elements.Player;
+//import elements.Player;
+import poker.Giocatore;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.io.File;
@@ -33,7 +34,7 @@ public class Board extends JFrame {
     // COSNTRUCTORS
     public Board(String title, String nome, char sesso, int soldi) throws IOException {
         super(title);
-        Player p1 = new Player(nome, sesso, 18, soldi);
+        Giocatore p1 = new Giocatore(nome, sesso, 18, soldi);
         this.dash = new Dashboard(new GridBagLayout(),p1);
         try { this.icon = new ImageIcon(ImageIO.read(new File("imgs/iface/icon.png"))); }
         catch (IOException ex) { System.out.println("Icona non trovata nella cartella 'imgs'"); }

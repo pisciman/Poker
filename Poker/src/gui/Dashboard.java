@@ -12,12 +12,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import gui.GMazzo;
-import elements.Player;
+//import elements.Player;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import javax.swing.JLabel;
+import poker.Giocatore;
 
 /**
  * @author d.abati
@@ -31,12 +32,12 @@ import javax.swing.JLabel;
 class Dashboard extends JPanel
 {
     // ATTRIBUTES
-    Player p1;
+    Giocatore p1;
     final GMazzo deck;
     final BufferedImage table;
     JLabel punti;
     // CONSTRUCTORS
-    public Dashboard (LayoutManager layout, Player p1) throws IOException
+    public Dashboard (LayoutManager layout, Giocatore p1) throws IOException
     {
         super(layout);
         this.p1=p1;
@@ -80,7 +81,7 @@ class Dashboard extends JPanel
         
     }
         private void build(){
-        punti =new JLabel(p1.getName()+": "+p1.getMoney()+"$");
+        punti =new JLabel(p1.getNomeGiocatore()+": "+p1.getSoldi()+"$");
         punti.setBounds(600,54, 100,30);
         add(punti);
         setLayout(null);  

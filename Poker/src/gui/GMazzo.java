@@ -41,7 +41,7 @@ public class GMazzo
         }
     }
     
-    private void shuffle() {
+    public void shuffle() {
         Collections.shuffle(Arrays.asList(cards));
     }
     

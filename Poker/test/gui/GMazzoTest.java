@@ -39,11 +39,35 @@ public class GMazzoTest {
     public void testPeek() {
         System.out.println("peek");
         GMazzo instance = new GMazzo();
-        Carta expResult = new Carta(Seme.QUADRI,Valore.ASSO,false);
+        Carta expResult = new Carta(Seme.FIORI,Valore.ASSO,false);
         GCarta result = instance.peek();
         result.rivela();
         assertEquals(expResult, result);
        
     }
+    
+     @Test
+    public void TestPesca( ) throws Exception {
+        GMazzo m = new GMazzo();
+
+        Carta c=null;
+        for (int i=0;i<52;i++)
+            c= m.peek();
+        Carta expResult= new Carta(Seme.FIORI,Valore.ASSO,false);
+        assertTrue(c.equals(expResult));
+        c= m.peek();
+        assertTrue(c == null);
+
+    }
+
+
+    @Test
+    public void TestMescola( ) throws Exception {
+        GMazzo m = new GMazzo();
+        Carta expResult= new Carta(Seme.QUADRI,Valore.ASSO,false);
+        m.shuffle();
+        assertFalse(expResult.equals(m.peek()));
+    }
+    
     
 }
