@@ -8,11 +8,16 @@ package gui;
 
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -57,7 +62,7 @@ public class Login extends JFrame implements ActionListener
     Login ()
     {
         super();
-
+        
         this.creds = new JLabel("Inserisci il tuo nickname: ");
         this.credsField = new JTextField(20);
         this.start = new JButton("Play");
@@ -107,7 +112,7 @@ public class Login extends JFrame implements ActionListener
         swear.addActionListener(this);
         start.addActionListener(this);
     }
-    
+        
     @Override
     public void actionPerformed(ActionEvent act) {
         if (act.getSource() == swear) adult = !adult;

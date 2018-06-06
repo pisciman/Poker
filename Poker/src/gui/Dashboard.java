@@ -36,9 +36,16 @@ class Dashboard extends JPanel
     Giocatore p1;
     final GMazzo deck;
     final BufferedImage table;
-    final BufferedImage fiches;
+    final BufferedImage fiches5;
+    final BufferedImage fiches10;
+    final BufferedImage fiches50;
+    final BufferedImage fiches100;
+    final BufferedImage fiches200;
+    final BufferedImage fiches500;
+    final BufferedImage fichesGiocatori;
     //final JLabel labelf;
-    JLabel punti;
+    JLabel nome;
+    JLabel puntata;
     // CONSTRUCTORS
     public Dashboard (LayoutManager layout, Giocatore p1) throws IOException
     {
@@ -46,7 +53,13 @@ class Dashboard extends JPanel
         this.p1=p1;
         this.deck = new GMazzo();
         this.table = loadImage("imgs/iface/bg.jpg");
-        this.fiches = loadImage("imgs/iface/fiches200.png");
+        this.fiches5 = loadImage("imgs/iface/fiches5.png");
+        this.fiches10 = loadImage("imgs/iface/fiches10.png");
+        this.fiches50 = loadImage("imgs/iface/fiches50.png");
+        this.fiches100 = loadImage("imgs/iface/fiches100.png");
+        this.fiches200 = loadImage("imgs/iface/fiches200.png");
+        this.fiches500 = loadImage("imgs/iface/fiches500.png");
+        this.fichesGiocatori = loadImage("imgs/iface/fichesop.png");
 
         build();   
     }
@@ -68,8 +81,8 @@ class Dashboard extends JPanel
         at.translate(0, -1075);
         g2.drawImage(deck.peek().back, at, this);
         at.translate(-95, 0);
-        
         g2.drawImage(deck.peek().back, at, this);
+        
         at.rotate(Math.toRadians(90));
         at.translate(600, -600);
         g2.drawImage(deck.peek().face, at, this);
@@ -86,13 +99,31 @@ class Dashboard extends JPanel
         at.translate(-95, 0);
         g2.drawImage(deck.peek().face, at, this);
         
-        g2.drawImage(fiches, 700, 510, null);
+        g2.drawImage(fichesGiocatori, 130, 60, null);
+        g2.drawImage(fichesGiocatori, 935, 60, null);
         
+        if(p1.getSoldi()>=0 && p1.getSoldi()<=9){
+        g2.drawImage(fiches5, 700, 510, null);
+        }else if(p1.getSoldi()>=10 && p1.getSoldi()<=49){
+            g2.drawImage(fiches10, 700, 510, null);
+        }else if(p1.getSoldi()>=50 && p1.getSoldi()<=99){
+            g2.drawImage(fiches50, 700, 510, null);
+        }else if(p1.getSoldi()>=100 && p1.getSoldi()<=199){
+            g2.drawImage(fiches100, 700, 510, null);
+        }else if(p1.getSoldi()>=200 && p1.getSoldi()<=499){
+            g2.drawImage(fiches200, 700, 510, null);
+        }else if(p1.getSoldi()>=500){
+            g2.drawImage(fiches500, 700, 510, null);
+        }
     }
+    
         private void build(){
-        punti =new JLabel(p1.getNomeGiocatore()+": "+p1.getSoldi()+"$");
-        punti.setBounds(600,54, 100,30);
-        add(punti);
+        nome = new JLabel("Nome: " +p1.getNomeGiocatore());
+        nome.setBounds(555,475, 80,30);
+        add(nome);
+        puntata = new JLabel("Puntata: " +p1.getSoldi()+ "$");
+        puntata.setBounds(765,475, 80,30);
+        add(puntata);
         setLayout(null);  
         setVisible(true);
     }
