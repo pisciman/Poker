@@ -17,6 +17,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import poker.Giocatore;
 
@@ -35,6 +36,8 @@ class Dashboard extends JPanel
     Giocatore p1;
     final GMazzo deck;
     final BufferedImage table;
+    final BufferedImage fiches;
+    //final JLabel labelf;
     JLabel punti;
     // CONSTRUCTORS
     public Dashboard (LayoutManager layout, Giocatore p1) throws IOException
@@ -43,6 +46,8 @@ class Dashboard extends JPanel
         this.p1=p1;
         this.deck = new GMazzo();
         this.table = loadImage("imgs/iface/bg.jpg");
+        this.fiches = loadImage("imgs/iface/fiches200.png");
+
         build();   
     }
     
@@ -54,6 +59,7 @@ class Dashboard extends JPanel
         
         super.paintComponent(g);
         g2.drawImage(table, 0, 0, null);
+        
         at.rotate(Math.toRadians(90));
         at.translate(-45, -65);
         g2.drawImage(deck.peek().back, at, this);
@@ -62,6 +68,7 @@ class Dashboard extends JPanel
         at.translate(0, -1075);
         g2.drawImage(deck.peek().back, at, this);
         at.translate(-95, 0);
+        
         g2.drawImage(deck.peek().back, at, this);
         at.rotate(Math.toRadians(90));
         at.translate(600, -600);
@@ -78,6 +85,8 @@ class Dashboard extends JPanel
         g2.drawImage(deck.peek().face, at, this);
         at.translate(-95, 0);
         g2.drawImage(deck.peek().face, at, this);
+        
+        g2.drawImage(fiches, 700, 510, null);
         
     }
         private void build(){

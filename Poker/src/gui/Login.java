@@ -65,7 +65,7 @@ public class Login extends JFrame implements ActionListener
         this.types = new JRadioButton[2];
         this.swear = new JCheckBox("Dichiaro di essere maggiorenne");
         this.slider = new JSlider(JSlider.HORIZONTAL, 0, 200, 180);
-        
+    
         actions();
         craft();
     }

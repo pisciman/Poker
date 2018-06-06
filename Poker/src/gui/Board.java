@@ -12,9 +12,14 @@ import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JWindow;
+import javax.swing.SwingConstants;
 
 /**
  * @author d.abati
@@ -58,6 +63,7 @@ public class Board extends JFrame {
     /* Main Method */
     public static void main(String[] args) {
         //TODO: Qui ci vuole lo splash screen (Daria)
+        
          Login l1= new Login();
          //TODO: Login dovrebbe restituire un giocatore (anzi, meglio un arrayList di giocatori. POI Chiamare Dashboard(con i giocatori). 
          //TODO: Probablimente da inserire in un ciclo per fare più partite, gestire i soldi, 
